@@ -1,0 +1,1383 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>puremvc.patterns.facade.Facade</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="puremvc-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >PureMVC Multicore Python</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        puremvc ::
+        patterns ::
+        facade ::
+        Facade ::
+        Class&nbsp;Facade
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="puremvc.patterns.facade.Facade-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Facade</h1><p class="nomargin-top"><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+          object --+        
+                   |        
+<a href="puremvc.interfaces.INotifier-class.html">interfaces.INotifier</a> --+    
+                       |    
+      <a href="puremvc.interfaces.IFacade-class.html">interfaces.IFacade</a> --+
+                           |
+                          <strong class="uidshort">Facade</strong>
+</pre>
+
+<hr />
+<p>A base Multiton <code>IFacade</code> implementation.</p>
+  <p>In PureMVC, the <code>Facade</code> class assumes these 
+  responsibilities:</p>
+  <p>Initializing the <code>Model</code>, <code>View</code> and 
+  <code>Controller</code> Singletons.</p>
+  <p>Providing all the methods defined by the <code>IModel, IView, &amp; 
+  IController</code> interfaces.</p>
+  <p>Providing the ability to override the specific <code>Model</code>, 
+  <code>View</code> and <code>Controller</code> Singletons created.</p>
+  <p>Providing a single point of contact to the application for registering
+  <code>Commands</code> and notifying <code>Observers</code></p>
+
+<hr />
+<div class="fields">      <dl><dt>See Also:</dt>
+        <dd>
+          <a href="puremvc.core.Model-class.html" class="link">Model</a>,
+          <a href="puremvc.core.View-class.html" class="link">View</a>,
+          <a href="puremvc.core.Controller-class.html" 
+          class="link">Controller</a>,
+          <a href="puremvc.patterns.observer.Notification-class.html" 
+          class="link">Notification</a>,
+          <a href="puremvc.patterns.mediator.Mediator-class.html" 
+          class="link">Mediator</a>,
+          <a href="puremvc.patterns.proxy.Proxy-class.html" 
+          class="link">Proxy</a>,
+          <a href="puremvc.patterns.command.SimpleCommand-class.html" 
+          class="link">SimpleCommand</a>,
+          <a href="puremvc.patterns.command.MacroCommand-class.html" 
+          class="link">MacroCommand</a>
+        </dd>
+      </dl>
+</div><!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">key</span>)</span><br />
+      Constructor.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#initializeFacade" class="summary-sig-name">initializeFacade</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Initialize the Multiton <code>Facade</code> instance.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.initializeFacade">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#initializeController" class="summary-sig-name">initializeController</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Initialize the <code>Controller</code>.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.initializeController">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#initializeModel" class="summary-sig-name">initializeModel</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Initialize the <code>Model</code>.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.initializeModel">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#initializeView" class="summary-sig-name">initializeView</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Initialize the <code>View</code>.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.initializeView">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#registerCommand" class="summary-sig-name">registerCommand</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">notificationName</span>,
+        <span class="summary-sig-arg">commandClassRef</span>)</span><br />
+      Register an <code>ICommand</code> with the <code>Controller</code> by
+      Notification name.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.registerCommand">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#removeCommand" class="summary-sig-name">removeCommand</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">notificationName</span>)</span><br />
+      Remove a previously registered <code>ICommand</code> to 
+      <code>INotification</code> mapping from the Controller.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.removeCommand">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#hasCommand" class="summary-sig-name">hasCommand</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">notificationName</span>)</span><br />
+      Check if a Command is registered for a given Notification</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.hasCommand">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#registerProxy" class="summary-sig-name">registerProxy</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">proxy</span>)</span><br />
+      Register an <code>IProxy</code> with the <code>Model</code> by name.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.registerProxy">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#retrieveProxy" class="summary-sig-name">retrieveProxy</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">proxyName</span>)</span><br />
+      Retrieve an <code>IProxy</code> from the <code>Model</code> by name.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.retrieveProxy">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#removeProxy" class="summary-sig-name">removeProxy</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">proxyName</span>)</span><br />
+      Remove an <code>IProxy</code> from the <code>Model</code> by name.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.removeProxy">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#hasProxy" class="summary-sig-name">hasProxy</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">proxyName</span>)</span><br />
+      Check if a Proxy is registered</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.hasProxy">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#registerMediator" class="summary-sig-name">registerMediator</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mediator</span>)</span><br />
+      Register a <code>IMediator</code> with the <code>View</code>.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.registerMediator">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#retrieveMediator" class="summary-sig-name">retrieveMediator</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mediatorName</span>)</span><br />
+      Retrieve an <code>IMediator</code> from the <code>View</code>.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.retrieveMediator">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#removeMediator" class="summary-sig-name">removeMediator</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mediatorName</span>)</span><br />
+      Remove an <code>IMediator</code> from the <code>View</code>.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.removeMediator">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#hasMediator" class="summary-sig-name">hasMediator</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mediatorName</span>)</span><br />
+      Check if a Mediator is registered or not</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.hasMediator">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#sendNotification" class="summary-sig-name">sendNotification</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">notificationName</span>,
+        <span class="summary-sig-arg">body</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">noteType</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Create and send an <code>INotification</code>.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.sendNotification">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#notifyObservers" class="summary-sig-name">notifyObservers</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">notification</span>)</span><br />
+      Notify <code>Observer</code>s.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.notifyObservers">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#initializeNotifier" class="summary-sig-name">initializeNotifier</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">key</span>)</span><br />
+      Set the Multiton key for this facade instance.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.initializeNotifier">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="puremvc.interfaces.IFacade-class.html">interfaces.IFacade</a></code></b>:
+      <code><a href="puremvc.interfaces.IFacade-class.html#retreieveMediator">retreieveMediator</a></code>,
+      <code><a href="puremvc.interfaces.IFacade-class.html#retreieveProxy">retreieveProxy</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS METHODS ==================== -->
+<a name="section-ClassMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#getInstance" class="summary-sig-name">getInstance</a>(<span class="summary-sig-arg">cls</span>,
+        <span class="summary-sig-arg">key</span>)</span><br />
+      Facade Multiton Factory method</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.getInstance">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#hasCore" class="summary-sig-name">hasCore</a>(<span class="summary-sig-arg">cls</span>,
+        <span class="summary-sig-arg">key</span>)</span><br />
+      Check if a Core is registered or not</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.hasCore">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#removeCore" class="summary-sig-name">removeCore</a>(<span class="summary-sig-arg">cls</span>,
+        <span class="summary-sig-arg">key</span>)</span><br />
+      Remove a Core.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.removeCore">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="instanceMap"></a><span class="summary-name">instanceMap</span> = <code title="{}"><code class="variable-group">{</code><code class="variable-group">}</code></code><br />
+      Message Constants
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="puremvc.patterns.facade.Facade-class.html#MULTITON_MSG" class="summary-name">MULTITON_MSG</a> = <code title="'Facade instance for this Multiton key already constructed!'"><code class="variable-quote">'</code><code class="variable-string">Facade instance for this Multiton key already </code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">key</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Constructor.</p>
+  <p>This <code>IFacade</code> implementation is a Multiton, so you should 
+  not call the constructor directly, but instead call the static Factory 
+  method, passing the unique key for this instance 
+  <code>Facade.getInstance( multitonKey )</code></p>
+  <dl class="fields">
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="puremvc.MultitonError-class.html">MultitonError</a></strong></code> - if instance for this Multiton key has already been constructed</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="initializeFacade"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">initializeFacade</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.initializeFacade">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialize the Multiton <code>Facade</code> instance.</p>
+  <p>Called automatically by the constructor. Override in your subclass to 
+  do any subclass specific initializations. Be sure to call 
+  <code>super.initializeFacade()</code>, though.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="getInstance"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getInstance</span>(<span class="sig-arg">cls</span>,
+        <span class="sig-arg">key</span>)</span>
+    <br /><em class="fname">Class Method</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.getInstance">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Facade Multiton Factory method</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>the Multiton instance of the Facade</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="initializeController"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">initializeController</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.initializeController">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialize the <code>Controller</code>.</p>
+  <p>Called by the <code>initializeFacade</code> method. Override this 
+  method in your subclass of <code>Facade</code> if one or both of the 
+  following are true:</p>
+  <p>You wish to initialize a different <code>IController</code>. You have 
+  <code>Commands</code> to register with the <code>Controller</code> at 
+  startup.</p>
+  <p>If you don't want to initialize a different <code>IController</code>, 
+  call <code>super.initializeController()</code> at the beginning of your 
+  method, then register <code>Proxy</code>s.</p>
+  <p>Note: This method is &lt;i&gt;rarely&lt;i&gt; overridden; in practice 
+  you are more likely to use a <code>Command</code> to create and register 
+  <code>Proxy</code>s with the <code>Model</code>, since 
+  <code>Proxy</code>s with mutable data will likely need to send 
+  <code>INotification</code>s and thus will likely want to fetch a 
+  reference to the <code>Facade</code> during their construction.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="initializeModel"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">initializeModel</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.initializeModel">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialize the <code>Model</code>.</p>
+  <p>Called by the <code>initializeFacade</code> method. Override this 
+  method in your subclass of <code>Facade</code> if one or both of the 
+  following are true:</p>
+  <p>You wish to initialize a different <code>IModel</code>.</p>
+  <p>You have <code>Proxy</code>s to register with the Model that do not 
+  retrieve a reference to the Facade at construction time.</p>
+  <p>If you don't want to initialize a different <code>IModel</code>, call 
+  <code>super.initializeModel()</code> at the beginning of your method, 
+  then register <code>Proxy</code>s.</p>
+  <p>Note: This method is &lt;i&gt;rarely&lt;/i&gt; overridden; in practice
+  you are more likely to use a <code>Command</code> to create and register 
+  <code>Proxy</code>s with the <code>Model</code>, since 
+  <code>Proxy</code>s with mutable data will likely need to send 
+  <code>INotification</code>s and thus will likely want to fetch a 
+  reference to the <code>Facade</code> during their construction.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="initializeView"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">initializeView</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.initializeView">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialize the <code>View</code>.</p>
+  <p>Called by the <code>initializeFacade</code> method. Override this 
+  method in your subclass of <code>Facade</code> if one or both of the 
+  following are true:</p>
+  <p>You wish to initialize a different <code>IView</code>.</p>
+  <p>You have <code>Observers</code> to register with the 
+  <code>View</code></p>
+  <p>If you don't want to initialize a different <code>IView</code>, call 
+  <code>super.initializeView()</code> at the beginning of your method, then
+  register <code>IMediator</code> instances.</p>
+  <p>Note: This method is &lt;i&gt;rarely&lt;/i&gt; overridden; in practice
+  you are more likely to use a <code>Command</code> to create and register 
+  <code>Mediator</code>s with the <code>View</code>, since 
+  <code>IMediator</code> instances will need to send 
+  <code>INotification</code>s and thus will likely want to fetch a 
+  reference to the <code>Facade</code> during their construction.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="registerCommand"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">registerCommand</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">notificationName</span>,
+        <span class="sig-arg">commandClassRef</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.registerCommand">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Register an <code>ICommand</code> with the <code>Controller</code> by 
+  Notification name.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>notificationName</code></strong> - the name of the <code>INotification</code> to associate the 
+          <code>ICommand</code> with</li>
+        <li><strong class="pname"><code>commandClassRef</code></strong> - a reference to the Class of the <code>ICommand</code></li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="puremvc.interfaces.IFacade-class.html#registerCommand">interfaces.IFacade.registerCommand</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeCommand"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeCommand</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">notificationName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.removeCommand">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Remove a previously registered <code>ICommand</code> to 
+  <code>INotification</code> mapping from the Controller.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>notificationName</code></strong> - the name of the <code>INotification</code> to remove the 
+          <code>ICommand</code> mapping for</li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="puremvc.interfaces.IFacade-class.html#removeCommand">interfaces.IFacade.removeCommand</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="hasCommand"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">hasCommand</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">notificationName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.hasCommand">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Check if a Command is registered for a given Notification</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>notificationName</code></strong> - the name of the <code>INotification</code></li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>whether a Command is currently registered for the given 
+          <code>notificationName</code>.</dd>
+    <dt>Overrides:
+        <a href="puremvc.interfaces.IFacade-class.html#hasCommand">interfaces.IFacade.hasCommand</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="registerProxy"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">registerProxy</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">proxy</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.registerProxy">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Register an <code>IProxy</code> with the <code>Model</code> by 
+  name.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>proxy</code></strong> - the <code>IProxy</code> instance to be registered with the 
+          <code>Model</code>.</li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="puremvc.interfaces.IFacade-class.html#registerProxy">interfaces.IFacade.registerProxy</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="retrieveProxy"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">retrieveProxy</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">proxyName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.retrieveProxy">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Retrieve an <code>IProxy</code> from the <code>Model</code> by 
+  name.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>proxyName</code></strong> - the name of the proxy to be retrieved.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the <code>IProxy</code> instance previously registered with the 
+          given <code>proxyName</code>.</dd>
+    <dt>Overrides:
+        <a href="puremvc.interfaces.IFacade-class.html#retrieveProxy">interfaces.IFacade.retrieveProxy</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeProxy"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeProxy</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">proxyName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.removeProxy">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Remove an <code>IProxy</code> from the <code>Model</code> by name.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>proxyName</code></strong> - the <code>IProxy</code> to remove from the <code>Model</code>.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the <code>IProxy</code> that was removed from the 
+          <code>Model</code></dd>
+    <dt>Overrides:
+        <a href="puremvc.interfaces.IFacade-class.html#removeProxy">interfaces.IFacade.removeProxy</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="hasProxy"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">hasProxy</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">proxyName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.hasProxy">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Check if a Proxy is registered</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>proxyName</code></strong> - the name of the <code>IProxy</code></li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>whether a Proxy is currently registered with the given 
+          <code>proxyName</code>.</dd>
+    <dt>Overrides:
+        <a href="puremvc.interfaces.IFacade-class.html#hasProxy">interfaces.IFacade.hasProxy</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="registerMediator"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">registerMediator</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">mediator</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.registerMediator">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Register a <code>IMediator</code> with the <code>View</code>.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>mediator</code></strong> - a reference to the <code>IMediator</code></li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="puremvc.interfaces.IFacade-class.html#registerMediator">interfaces.IFacade.registerMediator</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="retrieveMediator"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">retrieveMediator</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">mediatorName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.retrieveMediator">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Retrieve an <code>IMediator</code> from the <code>View</code>.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>mediatorName</code></strong> - the name of the <code>IMediator</code></li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the <code>IMediator</code> previously registered with the given 
+          <code>mediatorName</code>.</dd>
+    <dt>Overrides:
+        <a href="puremvc.interfaces.IFacade-class.html#retrieveMediator">interfaces.IFacade.retrieveMediator</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeMediator"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeMediator</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">mediatorName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.removeMediator">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Remove an <code>IMediator</code> from the <code>View</code>.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>mediatorName</code></strong> - name of the <code>IMediator</code> to be removed.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the <code>IMediator</code> that was removed from the 
+          <code>View</code></dd>
+    <dt>Overrides:
+        <a href="puremvc.interfaces.IFacade-class.html#removeMediator">interfaces.IFacade.removeMediator</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="hasMediator"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">hasMediator</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">mediatorName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.hasMediator">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Check if a Mediator is registered or not</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>mediatorName</code></strong> - the name of the <code>IMediator</code></li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>whether a Mediator is registered with the given 
+          <code>mediatorName</code>.</dd>
+    <dt>Overrides:
+        <a href="puremvc.interfaces.IFacade-class.html#hasMediator">interfaces.IFacade.hasMediator</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="sendNotification"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">sendNotification</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">notificationName</span>,
+        <span class="sig-arg">body</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">noteType</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.sendNotification">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create and send an <code>INotification</code>.</p>
+  <p>Keeps us from having to construct new notification instances in our 
+  implementation code.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>notificationName</code></strong> - the name of the notiification to send</li>
+        <li><strong class="pname"><code>body</code></strong> - the body of the notification (optional)</li>
+        <li><strong class="pname"><code>noteType</code></strong> - the type of the notification (optional)</li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="puremvc.interfaces.INotifier-class.html#sendNotification">interfaces.INotifier.sendNotification</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="notifyObservers"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">notifyObservers</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">notification</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.notifyObservers">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Notify <code>Observer</code>s.</p>
+  <p>This method is left public mostly for backward compatibility, and to 
+  allow you to send custom notification classes using the facade.</p>
+  <p>Usually you should just call sendNotification and pass the parameters,
+  never having to construct the notification yourself.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>notification</code></strong> - the <code>INotification</code> to have the <code>View</code> 
+          notify <code>Observers</code> of.</li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="puremvc.interfaces.IFacade-class.html#notifyObservers">interfaces.IFacade.notifyObservers</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="initializeNotifier"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">initializeNotifier</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">key</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.initializeNotifier">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Set the Multiton key for this facade instance.</p>
+  <p>Not called directly, but instead from the constructor when getInstance
+  is invoked. It is necessary to be public in order to implement 
+  INotifier.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>key</code></strong> - the multitonKey for this INotifier to use</li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="puremvc.interfaces.INotifier-class.html#initializeNotifier">interfaces.INotifier.initializeNotifier</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="hasCore"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">hasCore</span>(<span class="sig-arg">cls</span>,
+        <span class="sig-arg">key</span>)</span>
+    <br /><em class="fname">Class Method</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.hasCore">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Check if a Core is registered or not</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>key</code></strong> - the multiton key for the Core in question</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>whether a Core is registered with the given <code>key</code>.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeCore"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeCore</span>(<span class="sig-arg">cls</span>,
+        <span class="sig-arg">key</span>)</span>
+    <br /><em class="fname">Class Method</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.removeCore">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Remove a Core.</p>
+  <p>Remove the Model, View, Controller and Facade instances for the given 
+  key.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>key</code></strong> - of the Core to remove</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="MULTITON_MSG"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">MULTITON_MSG</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'</code><code class="variable-string">Facade instance for this Multiton key already constructed!</code><code class="variable-quote">'</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="puremvc-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >PureMVC Multicore Python</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Sep 23 18:56:02 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

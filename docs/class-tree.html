@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class Hierarchy</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="puremvc-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Trees&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >PureMVC Multicore Python</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">&nbsp;</td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="class-tree.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<center><b>
+ [ <a href="module-tree.html">Module Hierarchy</a>
+ | <a href="class-tree.html">Class Hierarchy</a> ]
+</b></center><br />
+<h1 class="epydoc">Class Hierarchy</h1>
+<ul class="nomargin-top">
+    <li> <strong class="uidlink">object</strong>:
+      <em class="summary">The most base type</em>
+    <ul>
+    <li> <strong class="uidlink">exceptions.BaseException</strong>:
+      <em class="summary">Common base class for all exceptions</em>
+    <ul>
+    <li> <strong class="uidlink">exceptions.Exception</strong>:
+      <em class="summary">Common base class for all non-exit exceptions.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="puremvc.MultitonError-class.html">puremvc.MultitonError</a></strong>:
+      <em class="summary">Exception raised by multiton classes</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="puremvc.interfaces.ICommand-class.html">puremvc.interfaces.ICommand</a></strong>:
+      <em class="summary">The interface definition for a PureMVC Command</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="puremvc.patterns.command.MacroCommand-class.html">puremvc.patterns.command.MacroCommand</a></strong>:
+      <em class="summary">A base <code>ICommand</code> implementation that executes other 
+        <code>ICommand</code>s.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="puremvc.patterns.command.SimpleCommand-class.html">puremvc.patterns.command.SimpleCommand</a></strong>:
+      <em class="summary">A base <code>ICommand</code> implementation.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="puremvc.interfaces.IController-class.html">puremvc.interfaces.IController</a></strong>:
+      <em class="summary">The interface definition for a PureMVC Controller.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="puremvc.core.Controller-class.html">puremvc.core.Controller</a></strong>:
+      <em class="summary">A Multiton <code>IController</code> implementation.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="puremvc.interfaces.IFacade-class.html">puremvc.interfaces.IFacade</a></strong>:
+      <em class="summary">The interface definition for a PureMVC Facade.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="puremvc.patterns.facade.Facade-class.html">puremvc.patterns.facade.Facade</a></strong>:
+      <em class="summary">A base Multiton <code>IFacade</code> implementation.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="puremvc.interfaces.IMediator-class.html">puremvc.interfaces.IMediator</a></strong>:
+      <em class="summary">The interface definition for a PureMVC Mediator.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="puremvc.patterns.mediator.Mediator-class.html">puremvc.patterns.mediator.Mediator</a></strong>:
+      <em class="summary">A base <code>IMediator</code> implementation.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="puremvc.interfaces.IModel-class.html">puremvc.interfaces.IModel</a></strong>:
+      <em class="summary">The interface definition for a PureMVC Model.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="puremvc.core.Model-class.html">puremvc.core.Model</a></strong>:
+      <em class="summary">A Multiton <code>IModel</code> implementation.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="puremvc.interfaces.INotification-class.html">puremvc.interfaces.INotification</a></strong>:
+      <em class="summary">The interface definition for a PureMVC Notification.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="puremvc.patterns.observer.Notification-class.html">puremvc.patterns.observer.Notification</a></strong>:
+      <em class="summary">A base <code>INotification</code> implementation.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="puremvc.interfaces.INotifier-class.html">puremvc.interfaces.INotifier</a></strong>:
+      <em class="summary">The interface definition for a PureMVC Notifier.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="puremvc.interfaces.ICommand-class.html">puremvc.interfaces.ICommand</a></strong>:
+      <em class="summary">The interface definition for a PureMVC Command</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="puremvc.patterns.command.MacroCommand-class.html">puremvc.patterns.command.MacroCommand</a></strong>:
+      <em class="summary">A base <code>ICommand</code> implementation that executes other 
+        <code>ICommand</code>s.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="puremvc.patterns.command.SimpleCommand-class.html">puremvc.patterns.command.SimpleCommand</a></strong>:
+      <em class="summary">A base <code>ICommand</code> implementation.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="puremvc.interfaces.IFacade-class.html">puremvc.interfaces.IFacade</a></strong>:
+      <em class="summary">The interface definition for a PureMVC Facade.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="puremvc.patterns.facade.Facade-class.html">puremvc.patterns.facade.Facade</a></strong>:
+      <em class="summary">A base Multiton <code>IFacade</code> implementation.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="puremvc.interfaces.IMediator-class.html">puremvc.interfaces.IMediator</a></strong>:
+      <em class="summary">The interface definition for a PureMVC Mediator.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="puremvc.patterns.mediator.Mediator-class.html">puremvc.patterns.mediator.Mediator</a></strong>:
+      <em class="summary">A base <code>IMediator</code> implementation.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="puremvc.interfaces.IProxy-class.html">puremvc.interfaces.IProxy</a></strong>:
+      <em class="summary">The interface definition for a PureMVC Proxy.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="puremvc.patterns.proxy.Proxy-class.html">puremvc.patterns.proxy.Proxy</a></strong>:
+      <em class="summary">A base <code>IProxy</code> implementation.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="puremvc.patterns.observer.Notifier-class.html">puremvc.patterns.observer.Notifier</a></strong>:
+      <em class="summary">A Base <code>INotifier</code> implementation.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="puremvc.patterns.command.MacroCommand-class.html">puremvc.patterns.command.MacroCommand</a></strong>:
+      <em class="summary">A base <code>ICommand</code> implementation that executes other 
+        <code>ICommand</code>s.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="puremvc.patterns.mediator.Mediator-class.html">puremvc.patterns.mediator.Mediator</a></strong>:
+      <em class="summary">A base <code>IMediator</code> implementation.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="puremvc.patterns.proxy.Proxy-class.html">puremvc.patterns.proxy.Proxy</a></strong>:
+      <em class="summary">A base <code>IProxy</code> implementation.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="puremvc.patterns.command.SimpleCommand-class.html">puremvc.patterns.command.SimpleCommand</a></strong>:
+      <em class="summary">A base <code>ICommand</code> implementation.</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="puremvc.interfaces.IObserver-class.html">puremvc.interfaces.IObserver</a></strong>:
+      <em class="summary">The interface definition for a PureMVC Observer.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="puremvc.patterns.observer.Observer-class.html">puremvc.patterns.observer.Observer</a></strong>:
+      <em class="summary">A base <code>IObserver</code> implementation.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="puremvc.interfaces.IProxy-class.html">puremvc.interfaces.IProxy</a></strong>:
+      <em class="summary">The interface definition for a PureMVC Proxy.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="puremvc.patterns.proxy.Proxy-class.html">puremvc.patterns.proxy.Proxy</a></strong>:
+      <em class="summary">A base <code>IProxy</code> implementation.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="puremvc.interfaces.IView-class.html">puremvc.interfaces.IView</a></strong>:
+      <em class="summary">The interface definition for a PureMVC View.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="puremvc.core.View-class.html">puremvc.core.View</a></strong>:
+      <em class="summary">A Multiton <code>IView</code> implementation.</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+</ul>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="puremvc-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Trees&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >PureMVC Multicore Python</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Sep 23 18:56:02 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
