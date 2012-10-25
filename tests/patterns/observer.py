@@ -116,6 +116,6 @@ class NotifierTest(unittest.TestCase):
     def testSendNotificationNoType(self):
         """NotifierTest: send notification without type"""
         try:
-           self.notifier.sendNotification("TestNotification", 1)
+            self.notifier.sendNotification("TestNotification", 1)
         except Exception as e:
             self.fail(e)
