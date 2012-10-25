@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>puremvc.patterns.command</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="puremvc-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >PureMVC Multicore Python</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="puremvc-module.html">Package&nbsp;puremvc</a> ::
+        <a href="puremvc.patterns-module.html">Package&nbsp;patterns</a> ::
+        Module&nbsp;command
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="puremvc.patterns.command-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="puremvc.patterns.command-module.html">Module puremvc.patterns.command</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring"> PureMVC Python Port by Toby de Havilland &lt;toby.de.havilland@puremvc.org&gt;</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring"> PureMVC Python Port by Daniele Esposti &lt;expo@expobrain.net&gt;</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring"> PureMVC - Copyright(c) 2006-08 Futurescale, Inc., Some rights reserved.</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring"> Your reuse is governed by the Creative Commons Attribution 3.0 License</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Package puremvc=puremvc-module.html"><a title="puremvc" class="py-name" href="#" onclick="return doclink('link-0', 'puremvc', 'link-0');">puremvc</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module puremvc.interfaces=puremvc.interfaces-module.html"><a title="puremvc.interfaces" class="py-name" href="#" onclick="return doclink('link-1', 'interfaces', 'link-1');">interfaces</a></tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-2" class="py-name"><a title="puremvc" class="py-name" href="#" onclick="return doclink('link-2', 'puremvc', 'link-0');">puremvc</a></tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Package puremvc.patterns=puremvc.patterns-module.html"><a title="puremvc.patterns" class="py-name" href="#" onclick="return doclink('link-3', 'patterns', 'link-3');">patterns</a></tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Module puremvc.patterns.observer=puremvc.patterns.observer-module.html"><a title="puremvc.patterns.observer" class="py-name" href="#" onclick="return doclink('link-4', 'observer', 'link-4');">observer</a></tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"> </tt>
+<a name="MacroCommand"></a><div id="MacroCommand-def"><a name="L11"></a><tt class="py-lineno"> 11</tt> <a class="py-toggle" href="#" id="MacroCommand-toggle" onclick="return toggle('MacroCommand');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="puremvc.patterns.command.MacroCommand-class.html">MacroCommand</a><tt class="py-op">(</tt><tt class="py-base-class">puremvc</tt><tt class="py-op">.</tt><tt class="py-base-class">patterns</tt><tt class="py-op">.</tt><tt class="py-base-class">observer</tt><tt class="py-op">.</tt><tt class="py-base-class">Notifier</tt><tt class="py-op">,</tt> <tt class="py-base-class">puremvc</tt><tt class="py-op">.</tt><tt class="py-base-class">interfaces</tt><tt class="py-op">.</tt><tt class="py-base-class">ICommand</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MacroCommand-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="MacroCommand-expanded"><a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-docstring">    A base C{ICommand} implementation that executes other C{ICommand}s.</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-docstring">    A C{MacroCommand} maintains an list of C{ICommand} Class references called &lt;i&gt;SubCommands&lt;/i&gt;.</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-docstring">    When C{execute} is called, the C{MacroCommand}</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-docstring">    instantiates and calls C{execute} on each of its &lt;i&gt;SubCommands&lt;/i&gt; turn.</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-docstring">    Each &lt;i&gt;SubCommand&lt;/i&gt; will be passed a reference to the original</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-docstring">    C{INotification} that was passed to the C{MacroCommand}'s</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-docstring">    C{execute} method.</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-docstring">    Unlike C{SimpleCommand}, your subclass</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-docstring">    should not override C{execute}, but instead, should</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-docstring">    override the C{initializeMacroCommand} method,</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-docstring">    calling C{addSubCommand} once for each &lt;i&gt;SubCommand&lt;/i&gt;</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-docstring">    to be executed.</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-docstring">    @see: L{Controller&lt;puremvc.core.Controller&gt;}</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-docstring">    @see: L{Notification&lt;puremvc.patterns.observer.Notification&gt;}</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-docstring">    @see: L{SimpleCommand&lt;puremvc.patterns.command.SimpleCommand&gt;}</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"> </tt>
+<a name="MacroCommand.__init__"></a><div id="MacroCommand.__init__-def"><a name="L34"></a><tt class="py-lineno"> 34</tt> <a class="py-toggle" href="#" id="MacroCommand.__init__-toggle" onclick="return toggle('MacroCommand.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="puremvc.patterns.command.MacroCommand-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MacroCommand.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MacroCommand.__init__-expanded"><a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-docstring">        MacroCommand Constructor.</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-docstring">        You should not need to define a constructor,</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-docstring">        instead, override the C{initializeMacroCommand}</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"><tt class="py-docstring">        method.</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"><tt class="py-docstring">        If your subclass does define a constructor, be sure to call C{super()}.</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-comment"># Call superclass</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-5" class="py-name" targets="Class puremvc.patterns.command.MacroCommand=puremvc.patterns.command.MacroCommand-class.html"><a title="puremvc.patterns.command.MacroCommand" class="py-name" href="#" onclick="return doclink('link-5', 'MacroCommand', 'link-5');">MacroCommand</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Method puremvc.MultitonError.__init__()=puremvc.MultitonError-class.html#__init__,Method puremvc.core.Controller.__init__()=puremvc.core.Controller-class.html#__init__,Method puremvc.core.Model.__init__()=puremvc.core.Model-class.html#__init__,Method puremvc.core.View.__init__()=puremvc.core.View-class.html#__init__,Method puremvc.patterns.command.MacroCommand.__init__()=puremvc.patterns.command.MacroCommand-class.html#__init__,Method puremvc.patterns.facade.Facade.__init__()=puremvc.patterns.facade.Facade-class.html#__init__,Method puremvc.patterns.mediator.Mediator.__init__()=puremvc.patterns.mediator.Mediator-class.html#__init__,Method puremvc.patterns.observer.Notification.__init__()=puremvc.patterns.observer.Notification-class.html#__init__,Method puremvc.patterns.observer.Notifier.__init__()=puremvc.patterns.observer.Notifier-class.html#__init__,Method puremvc.patterns.observer.Observer.__init__()=puremvc.patterns.observer.Observer-class.html#__init__,Method puremvc.patterns.proxy.Proxy.__init__()=puremvc.patterns.proxy.Proxy-class.html#__init__"><a title="puremvc.MultitonError.__init__
+puremvc.core.Controller.__init__
+puremvc.core.Model.__init__
+puremvc.core.View.__init__
+puremvc.patterns.command.MacroCommand.__init__
+puremvc.patterns.facade.Facade.__init__
+puremvc.patterns.mediator.Mediator.__init__
+puremvc.patterns.observer.Notification.__init__
+puremvc.patterns.observer.Notifier.__init__
+puremvc.patterns.observer.Observer.__init__
+puremvc.patterns.proxy.Proxy.__init__" class="py-name" href="#" onclick="return doclink('link-6', '__init__', 'link-6');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">        <tt class="py-comment"># Initialize class</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">subCommands</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method puremvc.patterns.command.MacroCommand.initializeMacroCommand()=puremvc.patterns.command.MacroCommand-class.html#initializeMacroCommand"><a title="puremvc.patterns.command.MacroCommand.initializeMacroCommand" class="py-name" href="#" onclick="return doclink('link-7', 'initializeMacroCommand', 'link-7');">initializeMacroCommand</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"> </tt>
+<a name="MacroCommand.initializeMacroCommand"></a><div id="MacroCommand.initializeMacroCommand-def"><a name="L52"></a><tt class="py-lineno"> 52</tt> <a class="py-toggle" href="#" id="MacroCommand.initializeMacroCommand-toggle" onclick="return toggle('MacroCommand.initializeMacroCommand');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="puremvc.patterns.command.MacroCommand-class.html#initializeMacroCommand">initializeMacroCommand</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MacroCommand.initializeMacroCommand-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MacroCommand.initializeMacroCommand-expanded"><a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-docstring">        Initialize the C{MacroCommand}.</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-docstring">        In your subclass, override this method to initialize the</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-docstring">        C{MacroCommand}'s &lt;i&gt;SubCommand&lt;/i&gt; list with C{ICommand} class</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-docstring">        references like this::</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-docstring">            // Initialize MyMacroCommand</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-docstring">            function initializeMacroCommand( ) : void</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-docstring">            {</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-docstring">                addSubCommand( com.me.myapp.controller.FirstCommand );</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-docstring">                addSubCommand( com.me.myapp.controller.SecondCommand );</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"><tt class="py-docstring">                addSubCommand( com.me.myapp.controller.ThirdCommand );</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-docstring">            }</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"><tt class="py-docstring">        Note that &lt;i&gt;SubCommand&lt;/i&gt;s may be any C{ICommand} implementor,</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt class="py-docstring">        C{MacroCommand}s or C{SimpleCommands} are both acceptable.</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"> </tt>
+<a name="MacroCommand.addSubCommand"></a><div id="MacroCommand.addSubCommand-def"><a name="L73"></a><tt class="py-lineno"> 73</tt> <a class="py-toggle" href="#" id="MacroCommand.addSubCommand-toggle" onclick="return toggle('MacroCommand.addSubCommand');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="puremvc.patterns.command.MacroCommand-class.html#addSubCommand">addSubCommand</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">commandClassRef</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MacroCommand.addSubCommand-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MacroCommand.addSubCommand-expanded"><a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-docstring">        Add a &lt;i&gt;SubCommand&lt;/i&gt;.</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring">        The &lt;i&gt;SubCommands&lt;/i&gt; will be called in First In/First Out (FIFO)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">        order.</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-docstring">        @param commandClassRef: a reference to the C{Class} of the C{ICommand}.</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">subCommands</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">commandClassRef</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"> </tt>
+<a name="MacroCommand.execute"></a><div id="MacroCommand.execute-def"><a name="L84"></a><tt class="py-lineno"> 84</tt> <a class="py-toggle" href="#" id="MacroCommand.execute-toggle" onclick="return toggle('MacroCommand.execute');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="puremvc.patterns.command.MacroCommand-class.html#execute">execute</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">notification</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MacroCommand.execute-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MacroCommand.execute-expanded"><a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-docstring">        Execute this C{MacroCommand}'s &lt;i&gt;SubCommands&lt;/i&gt;.</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"><tt class="py-docstring">        The &lt;i&gt;SubCommands&lt;/i&gt; will be called in First In/First Out (FIFO)</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-docstring">        order.</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-docstring">        @param notification: the C{INotification} object to be passsed to each</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-docstring">        &lt;i&gt;SubCommand&lt;/i&gt;.</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">commandClassRef</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">subCommands</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">            <tt class="py-name">commandInstance</tt> <tt class="py-op">=</tt> <tt class="py-name">commandClassRef</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">            <tt class="py-name">commandInstance</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Method puremvc.interfaces.INotifier.initializeNotifier()=puremvc.interfaces.INotifier-class.html#initializeNotifier,Method puremvc.patterns.facade.Facade.initializeNotifier()=puremvc.patterns.facade.Facade-class.html#initializeNotifier,Method puremvc.patterns.observer.Notifier.initializeNotifier()=puremvc.patterns.observer.Notifier-class.html#initializeNotifier"><a title="puremvc.interfaces.INotifier.initializeNotifier
+puremvc.patterns.facade.Facade.initializeNotifier
+puremvc.patterns.observer.Notifier.initializeNotifier" class="py-name" href="#" onclick="return doclink('link-8', 'initializeNotifier', 'link-8');">initializeNotifier</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">multitonKey</tt><tt class="py-op">)</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">            <tt class="py-name">commandInstance</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Method puremvc.interfaces.ICommand.execute()=puremvc.interfaces.ICommand-class.html#execute,Method puremvc.patterns.command.MacroCommand.execute()=puremvc.patterns.command.MacroCommand-class.html#execute,Method puremvc.patterns.command.SimpleCommand.execute()=puremvc.patterns.command.SimpleCommand-class.html#execute"><a title="puremvc.interfaces.ICommand.execute
+puremvc.patterns.command.MacroCommand.execute
+puremvc.patterns.command.SimpleCommand.execute" class="py-name" href="#" onclick="return doclink('link-9', 'execute', 'link-9');">execute</a></tt><tt class="py-op">(</tt><tt class="py-name">notification</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"> </tt>
+<a name="SimpleCommand"></a><div id="SimpleCommand-def"><a name="L100"></a><tt class="py-lineno">100</tt> <a class="py-toggle" href="#" id="SimpleCommand-toggle" onclick="return toggle('SimpleCommand');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="puremvc.patterns.command.SimpleCommand-class.html">SimpleCommand</a><tt class="py-op">(</tt><tt class="py-base-class">puremvc</tt><tt class="py-op">.</tt><tt class="py-base-class">patterns</tt><tt class="py-op">.</tt><tt class="py-base-class">observer</tt><tt class="py-op">.</tt><tt class="py-base-class">Notifier</tt><tt class="py-op">,</tt> <tt class="py-base-class">puremvc</tt><tt class="py-op">.</tt><tt class="py-base-class">interfaces</tt><tt class="py-op">.</tt><tt class="py-base-class">ICommand</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SimpleCommand-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="SimpleCommand-expanded"><a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-docstring">    A base C{ICommand} implementation.</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-docstring">    Your subclass should override the C{execute}</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-docstring">    method where your business logic will handle the C{INotification}.</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring">    @see: L{Controller&lt;puremvc.core.Controller&gt;}</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"><tt class="py-docstring">    @see: L{Notification&lt;puremvc.patterns.observer.Notification&gt;}</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"><tt class="py-docstring">    @see: L{MacroCommand&lt;puremvc.patterns.command.MacroCommand&gt;}</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"> </tt>
+<a name="SimpleCommand.execute"></a><div id="SimpleCommand.execute-def"><a name="L112"></a><tt class="py-lineno">112</tt> <a class="py-toggle" href="#" id="SimpleCommand.execute-toggle" onclick="return toggle('SimpleCommand.execute');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="puremvc.patterns.command.SimpleCommand-class.html#execute">execute</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">notification</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SimpleCommand.execute-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SimpleCommand.execute-expanded"><a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"><tt class="py-docstring">        Fulfill the use-case initiated by the given C{INotification}.</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"><tt class="py-docstring">        In the Command Pattern, an application use-case typically</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"><tt class="py-docstring">        begins with some user action, which results in an C{INotification} being broadcast, which</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"><tt class="py-docstring">        is handled by business logic in the C{execute} method of an</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"><tt class="py-docstring">        C{ICommand}.</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"><tt class="py-docstring">        @param notification: the C{INotification} to handle.</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div></div><a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="puremvc-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >PureMVC Multicore Python</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Sep 23 18:56:02 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

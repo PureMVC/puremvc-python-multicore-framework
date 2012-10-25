@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>puremvc.interfaces.IView</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="puremvc-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >PureMVC Multicore Python</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="puremvc-module.html">Package&nbsp;puremvc</a> ::
+        <a href="puremvc.interfaces-module.html">Module&nbsp;interfaces</a> ::
+        Class&nbsp;IView
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="puremvc.interfaces.IView-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class IView</h1><p class="nomargin-top"><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+object --+
+         |
+        <strong class="uidshort">IView</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+      <ul class="subclass-list">
+<li><a href="puremvc.core.View-class.html">core.View</a></li>  </ul>
+</dd></dl>
+
+<hr />
+<p>The interface definition for a PureMVC View.</p>
+  <p>In PureMVC, <code>IView</code> implementors assume these 
+  responsibilities:</p>
+  <p>In PureMVC, the <code>View</code> class assumes these 
+  responsibilities:</p>
+  <p>Maintain a cache of <code>IMediator</code> instances.</p>
+  <p>Provide methods for registering, retrieving, and removing 
+  <code>IMediators</code>.</p>
+  <p>Managing the observer lists for each <code>INotification</code> in the
+  application.</p>
+  <p>Providing a method for attaching <code>IObservers</code> to an 
+  <code>INotification</code>'s observer list.</p>
+  <p>Providing a method for broadcasting an <code>INotification</code>.</p>
+  <p>Notifying the <code>IObservers</code> of a given 
+  <code>INotification</code> when it broadcast.</p>
+
+<hr />
+<div class="fields">      <dl><dt>See Also:</dt>
+        <dd>
+          <a href="puremvc.interfaces.IMediator-class.html" 
+          class="link">IMediator</a>,
+          <a href="puremvc.interfaces.IObserver-class.html" 
+          class="link">IObserver</a>,
+          <a href="puremvc.interfaces.INotification-class.html" 
+          class="link">INotification</a>
+        </dd>
+      </dl>
+</div><!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IView-class.html#registerObserver" class="summary-sig-name">registerObserver</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">notificationName</span>,
+        <span class="summary-sig-arg">observer</span>)</span><br />
+      Register an <code>IObserver</code> to be notified of 
+      <code>INotifications</code> with a given name.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.registerObserver">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IView-class.html#notifyObservers" class="summary-sig-name">notifyObservers</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">notification</span>)</span><br />
+      Notify the <code>IObservers</code> for a particular 
+      <code>INotification</code>.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.notifyObservers">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IView-class.html#registerMediator" class="summary-sig-name">registerMediator</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mediator</span>)</span><br />
+      Register an <code>IMediator</code> instance with the 
+      <code>View</code>.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.registerMediator">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IView-class.html#retrieveMediator" class="summary-sig-name">retrieveMediator</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mediatorName</span>)</span><br />
+      Retrieve an <code>IMediator</code> from the <code>View</code>.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.retrieveMediator">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IView-class.html#removeMediator" class="summary-sig-name">removeMediator</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mediatorName</span>)</span><br />
+      Remove an <code>IMediator</code> from the <code>View</code>.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.removeMediator">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IView-class.html#hasMediator" class="summary-sig-name">hasMediator</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mediatorName</span>)</span><br />
+      Check if a Mediator is registered or not.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.hasMediator">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IView-class.html#removeObserver" class="summary-sig-name">removeObserver</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">notificationName</span>,
+        <span class="summary-sig-arg">notifyContext</span>)</span><br />
+      Remove a group of observers from the observer list for a given 
+      Notification name.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.removeObserver">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__init__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="registerObserver"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">registerObserver</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">notificationName</span>,
+        <span class="sig-arg">observer</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.registerObserver">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Register an <code>IObserver</code> to be notified of 
+  <code>INotifications</code> with a given name.</p>
+  <p>Raises <code>NotImplemented</code> if subclass does not implement this
+  method.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>notificationName</code></strong> - the name of the <code>INotifications</code> to notify this 
+          <code>IObserver</code> of</li>
+        <li><strong class="pname"><code>observer</code></strong> - the <code>IObserver</code> to register</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="notifyObservers"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">notifyObservers</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">notification</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.notifyObservers">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Notify the <code>IObservers</code> for a particular 
+  <code>INotification</code>.</p>
+  <p>All previously attached <code>IObservers</code> for this 
+  <code>INotification</code>'s list are notified and are passed a reference
+  to the <code>INotification</code> in the order in which they were 
+  registered.</p>
+  <p>Raises <code>NotImplemented</code> if subclass does not implement this
+  method.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>notification</code></strong> - the <code>INotification</code> to notify <code>IObservers</code> 
+          of</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="registerMediator"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">registerMediator</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">mediator</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.registerMediator">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Register an <code>IMediator</code> instance with the 
+  <code>View</code>.</p>
+  <p>Registers the <code>IMediator</code> so that it can be retrieved by 
+  name, and further interrogates the <code>IMediator</code> for its 
+  <code>INotification</code> interests.</p>
+  <p>If the <code>IMediator</code> returns any <code>INotification</code> 
+  names to be notified about, an <code>Observer</code> is created 
+  encapsulating the <code>IMediator</code> instance's 
+  <code>handleNotification</code> method and registering it as an 
+  <code>Observer</code> for all <code>INotifications</code> the 
+  <code>IMediator</code> is interested in.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>mediator</code></strong> - a reference to the <code>IMediator</code> instance</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="retrieveMediator"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">retrieveMediator</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">mediatorName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.retrieveMediator">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Retrieve an <code>IMediator</code> from the <code>View</code>.</p>
+  <p>Raises <code>NotImplemented</code> if subclass does not implement this
+  method.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>mediatorName</code></strong> - the name of the <code>IMediator</code> instance to retrieve.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the <code>IMediator</code> instance previously registered with 
+          the given <code>mediatorName</code>.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeMediator"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeMediator</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">mediatorName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.removeMediator">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Remove an <code>IMediator</code> from the <code>View</code>.</p>
+  <p>Raises <code>NotImplemented</code> if subclass does not implement this
+  method.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>mediatorName</code></strong> - name of the <code>IMediator</code> instance to be removed.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the <code>IMediator</code> that was removed from the 
+          <code>View</code></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="hasMediator"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">hasMediator</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">mediatorName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.hasMediator">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Check if a Mediator is registered or not.</p>
+  <p>Raises <code>NotImplemented</code> if subclass does not implement this
+  method.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>mediatorName</code></strong> - name of the <code>IMediator</code></li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>whether a Mediator is registered with the given 
+          <code>mediatorName</code>.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeObserver"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeObserver</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">notificationName</span>,
+        <span class="sig-arg">notifyContext</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.removeObserver">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Remove a group of observers from the observer list for a given 
+  Notification name.</p>
+  <p>Raises <code>NotImplemented</code> if subclass does not implement this
+  method.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>notificationName</code></strong> - which observer list to remove from</li>
+        <li><strong class="pname"><code>notifyContext</code></strong> - removed the observers with this object as their notifyContext</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="puremvc-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >PureMVC Multicore Python</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Sep 23 18:56:02 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
