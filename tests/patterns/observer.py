@@ -110,12 +110,12 @@ class NotifierTest(unittest.TestCase):
         """NotifierTest: send notification without body and type"""
         try:
             self.notifier.sendNotification("TestNotification")
-        except Exception as e:
+        except Exception, e:  # Old-style 'except' for Python 2.5 compatibility
             self.fail(e)
 
     def testSendNotificationNoType(self):
         """NotifierTest: send notification without type"""
         try:
             self.notifier.sendNotification("TestNotification", 1)
-        except Exception as e:
+        except Exception, e:  # Old-style 'except' for Python 2.5 compatibility
             self.fail(e)

@@ -191,4 +191,5 @@ class FacadeTest(unittest.TestCase):
         class MyFacade(Facade):
             pass
 
-        self.assertIsInstance(MyFacade.getInstance("myFacade"), MyFacade)
+        # Use 'assertTrue' for Python 2.5 compatibility
+        self.assertTrue(isinstance(MyFacade.getInstance("myFacade"), MyFacade))
