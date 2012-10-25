@@ -43,3 +43,13 @@ class ProxyTest(unittest.TestCase):
         prxy = Proxy("multitonKey")
 
         self.assertTrue(hasattr(prxy, "multitonKey"))
+
+    def testEmptyData(self):
+        """ProxyTest: Test Constructor with not-null empty data"""
+
+        values = ["", (), []]
+
+        for value in values:
+            proxy = Proxy("empty", value)
+
+            self.assertEqual(proxy.data, value)
