@@ -1,0 +1,30 @@
+PureMVC MultiCore Framework for Python (Ported) --------------------------------------------------------------------------
+Release Date: 10/25/2012
+    Platform: Python 2.5+
+     Version: 1
+    Revision: 0
+       Minor: 0
+     Authors: Toby de Havilland <toby.de.havilland@puremvc.org>
+              Daniele Esposti <expo@expobrain.net>
+--------------------------------------------------------------------------
+1.0   - * Official PureMVC.org release
+0.3.2 - * Added unit test for non-null values in Proxy's constructor
+        * Fixes in unit tests code to support Python 2.5
+
+0.3.1 - * Fixed fabric test() task and added task's descriptions
+        * Fixed class inheritance where some classes inherit twice from the
+          same interface
+        * Improved docs strings
+        * Added missing tests in the unit test list
+        * Facade.getInstance() returns a new instance of the current class
+          instead of a base Facade class
+        * The 'body' argument in sendNotification() methods is always optional
+        * Proxy class should call it's superclass in the constructor
+
+0.3.0 - Renamed main package from puremvc_mc to puremvc
+
+0.2.1 - Made code PEP8 compliant
+
+0.2   - Improved unit test to cover multicore features
+
+0.1   - Initial project port from AS3 code
