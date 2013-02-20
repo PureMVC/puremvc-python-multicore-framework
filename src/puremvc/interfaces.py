@@ -28,7 +28,7 @@ class INotifier(object):
     @see: L{INotification<puremvc.interfaces.INotification>}
     """
 
-    def sendNotification(self, notificationName, body=None, noteType=None):
+    def sendNotification(self, notificationName, body=None, type=None):
         """
         Send a C{INotification}.
 
@@ -39,7 +39,7 @@ class INotifier(object):
 
         @param notificationName: the name of the notification to send
         @param body: the body of the notification (optional)
-        @param noteType: the type of the notification (optional)
+        @param type: the type of the notification (optional)
         """
         raise NotImplementedError(self)
 
