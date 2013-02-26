@@ -273,7 +273,7 @@ class Facade(puremvc.interfaces.IFacade):
         """
         return self.view.hasMediator(mediatorName)
 
-    def sendNotification(self, notificationName, body=None, noteType=None):
+    def sendNotification(self, notificationName, body=None, type=None):
         """
         Create and send an C{INotification}.
 
@@ -282,9 +282,9 @@ class Facade(puremvc.interfaces.IFacade):
 
         @param notificationName: the name of the notiification to send
         @param body: the body of the notification (optional)
-        @param noteType: the type of the notification (optional)
+        @param type: the type of the notification (optional)
         """
-        self.notifyObservers(puremvc.patterns.observer.Notification(notificationName, body, noteType))
+        self.notifyObservers(puremvc.patterns.observer.Notification(notificationName, body, type))
 
     def notifyObservers(self, notification):
         """
