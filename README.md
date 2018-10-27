@@ -8,7 +8,7 @@ The unit tests are included in this repository.
 * [Overview Presentation](http://puremvc.tv/#P002/)
 
 ## Status
-Production - [Version 1.0.1] (https://github.com/PureMVC/puremvc-python-multicore-framework/blob/master/VERSION)
+Production - [Version 1.0.1](https://github.com/PureMVC/puremvc-python-multicore-framework/blob/master/VERSION)
 
 ## Screenshot
 ![PureMVC Python MultiCore Unit Tests](http://puremvc.org/pages/images/screenshots/PureMVC-Shot-Python-MC-UnitTests.png)
