@@ -149,7 +149,7 @@ class Notifier(puremvc.interfaces.INotifier):
         """
         self.multitonKey = None
 
-    def sendNotification(self, notificationName, body=None, noteType=None):
+    def sendNotification(self, notificationName, body=None, type=None):
         """
         Create and send an C{INotification}.
 
@@ -159,10 +159,10 @@ class Notifier(puremvc.interfaces.INotifier):
 
         @param notificationName: the name of the notification to send
         @param body: the body of the notification (optional)
-        @param noteType: the type of the notification (optional)
+        @param type: the type of the notification (optional)
         """
         if self.facade:
-            self.facade.sendNotification(notificationName, body, noteType)
+            self.facade.sendNotification(notificationName, body, type)
 
     def initializeNotifier(self, key):
         """
@@ -226,13 +226,13 @@ class Notification(puremvc.interfaces.INotification):
     @see: L{Observer<puremvc.patterns.observer.Observer>}
     """
 
-    def __init__(self, name, body=None, noteType=None):
+    def __init__(self, name, body=None, type=None):
         """
         Constructor.
 
         @param name: name of the C{Notification} instance. (required)
         @param body: the C{Notification} body. (optional)
-        @param noteType: the type of the C{Notification} (optional)
+        @param type: the type of the C{Notification} (optional)
         """
 
         """The name of the notification instance"""
@@ -242,7 +242,7 @@ class Notification(puremvc.interfaces.INotification):
         self.body = body
 
         """The type of the notification instance"""
-        self.type = noteType
+        self.type = type
 
     def __repr__(self):
         """

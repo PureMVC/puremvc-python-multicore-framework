@@ -1,14 +1,18 @@
 PureMVC MultiCore Framework for Python (Ported)
 --------------------------------------------------------------------------
-Release Date: 10/25/2012
+Release Date: 20/02/2013
     Platform: Python 2.5+
      Version: 1
     Revision: 0
-       Minor: 0
+       Minor: 1
      Authors: Toby de Havilland <toby.de.havilland@puremvc.org>
               Daniele Esposti <expo@expobrain.net>
 --------------------------------------------------------------------------
-1.0   - * Official PureMVC.org release
+1.0.1 - * Renamed 'noteType' keyword in Notification's constructor to 'type'
+          for consistency
+
+1.0.0 - * Official PureMVC.org release
+
 0.3.2 - * Added unit test for non-null values in Proxy's constructor
         * Fixes in unit tests code to support Python 2.5
 
