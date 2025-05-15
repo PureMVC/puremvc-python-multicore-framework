@@ -15,7 +15,7 @@ pip install PureMVC
 Development: pip install -e .
 Testing: pytest test/
 Build: python -m build
-Publish: python3 -m twine upload dist/*
+Publish: twine upload dist/*
 
 Documentation: Generate
 mkdir docs && cd docs && sphinx-quickstart --sep -p PureMVC -a "Saad Shams" -v "2.0.0" -r "BSD 3-Clause License" -l "en"
