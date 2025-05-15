@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>puremvc.patterns.observer package &mdash; PureMVC BSD 3-Clause License documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="puremvc.patterns.proxy package" href="puremvc.patterns.proxy.html" />
+    <link rel="prev" title="puremvc.patterns.mediator package" href="puremvc.patterns.mediator.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PureMVC
+          </a>
+              <div class="version">
+                2.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">puremvc</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="puremvc.html">puremvc package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="puremvc.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="puremvc.core.html">puremvc.core package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="puremvc.interfaces.html">puremvc.interfaces package</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="puremvc.patterns.html">puremvc.patterns package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="puremvc.html#module-puremvc">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PureMVC</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">puremvc</a></li>
+          <li class="breadcrumb-item"><a href="puremvc.html">puremvc package</a></li>
+          <li class="breadcrumb-item"><a href="puremvc.patterns.html">puremvc.patterns package</a></li>
+      <li class="breadcrumb-item active">puremvc.patterns.observer package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/puremvc.patterns.observer.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="puremvc-patterns-observer-package">
+<h1>puremvc.patterns.observer package<a class="headerlink" href="#puremvc-patterns-observer-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-puremvc.patterns.observer.Notification">
+<span id="puremvc-patterns-observer-notification-module"></span><h2>puremvc.patterns.observer.Notification module<a class="headerlink" href="#module-puremvc.patterns.observer.Notification" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="puremvc.patterns.observer.Notification.Notification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">puremvc.patterns.observer.Notification.</span></span><span class="sig-name descname"><span class="pre">Notification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.patterns.observer.Notification.Notification" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="puremvc.interfaces.html#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">INotification</span></code></a></p>
+<p>A base <cite>INotification</cite> implementation.</p>
+<p>PureMVC does not rely upon underlying event models such
+as the one provided with Flash, and ActionScript 3 does
+not have an inherent event model.</p>
+<p>The Observer Pattern as implemented within PureMVC exists
+to support event-driven communication between the
+application and the actors of the MVC triad.</p>
+<p>Notifications are not meant to be a replacement for Events
+in Flex/Flash/Apollo. Generally, <cite>IMediator</cite> implementors
+place event listeners on their view components, which they
+then handle in the usual way. This may lead to the broadcast of <cite>Notification</cite> to
+trigger <cite>ICommand</cite> or to communicate with other <cite>IMediators</cite>. <cite>IProxy</cite> and <cite>ICommand</cite>
+instances communicate with each other and <cite>IMediator`s
+by broadcasting `INotification</cite>.</p>
+<p>A key difference between Flash <cite>Event</cite> and PureMVC
+<cite>Notification</cite> is that <cite>Event</cite> follows the
+‘Chain of Responsibility’ pattern, ‘bubbling’ up the display hierarchy
+until some parent component handles the <cite>Event</cite>, while
+PureMVC <cite>Notification</cite> follows a ‘Publish/Subscribe’
+pattern. PureMVC classes need not be related to each other in a
+parent/child relationship to communicate with one another
+using <cite>Notification</cite>.</p>
+<section id="see-also">
+<h3>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading"></a></h3>
+<p><a class="reference internal" href="#module-puremvc.patterns.observer.Observer" title="puremvc.patterns.observer.Observer"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.patterns.observer.Observer</span></code></a></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="puremvc.patterns.observer.Notification.Notification.body">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">body</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><a class="headerlink" href="#puremvc.patterns.observer.Notification.Notification.body" title="Permalink to this definition"></a></dt>
+<dd><p>This method returns the value of the <cite>_body</cite> attribute.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The value of the <cite>_body</cite> attribute.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="puremvc.patterns.observer.Notification.Notification.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#puremvc.patterns.observer.Notification.Notification.name" title="Permalink to this definition"></a></dt>
+<dd><p>Get the name of the <cite>Notification</cite> instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The name of the <cite>Notification</cite> instance.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="puremvc.patterns.observer.Notification.Notification.type">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#puremvc.patterns.observer.Notification.Notification.type" title="Permalink to this definition"></a></dt>
+<dd><p>Get the body of the <cite>Notification</cite> instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The type of the object.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+<section id="module-puremvc.patterns.observer.Observer">
+<span id="puremvc-patterns-observer-observer-module"></span><h2>puremvc.patterns.observer.Observer module<a class="headerlink" href="#module-puremvc.patterns.observer.Observer" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="puremvc.patterns.observer.Observer.Observer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">puremvc.patterns.observer.Observer.</span></span><span class="sig-name descname"><span class="pre">Observer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notify_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="puremvc.interfaces.html#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification"><span class="pre">INotification</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notify_context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.patterns.observer.Observer.Observer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="puremvc.interfaces.html#puremvc.interfaces.IObserver.IObserver" title="puremvc.interfaces.IObserver.IObserver"><code class="xref py py-class docutils literal notranslate"><span class="pre">IObserver</span></code></a></p>
+<p>A base <cite>IObserver</cite> implementation.</p>
+<p>An <cite>Observer</cite> is an object that encapsulates information
+about an interested object with a method that should
+be called when a particular <cite>INotification</cite> is broadcast.</p>
+<p>In PureMVC, the <cite>Observer</cite> class assumes these responsibilities:</p>
+<p>Encapsulate the notification (callback) method of the interested object.</p>
+<p>Encapsulate the notification context (this) of the interested object.</p>
+<p>Provide methods for setting the notification method and context.</p>
+<p>Provide a method for notifying the interested object.</p>
+<section id="id1">
+<h3>See Also<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<p><a class="reference internal" href="puremvc.core.html#module-puremvc.core.View" title="puremvc.core.View"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.core.View</span></code></a>
+<a class="reference internal" href="#module-puremvc.patterns.observer.Notification" title="puremvc.patterns.observer.Notification"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.patterns.observer.Notification</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.patterns.observer.Observer.Observer.compare_notify_context">
+<span class="sig-name descname"><span class="pre">compare_notify_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#puremvc.patterns.observer.Observer.Observer.compare_notify_context" title="Permalink to this definition"></a></dt>
+<dd><p>Compare an object to the notification context.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<em>Any</em>) – The object to compare with the notify context.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the given object is equal to the notify context, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="puremvc.patterns.observer.Observer.Observer.notify_context">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">notify_context</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><a class="headerlink" href="#puremvc.patterns.observer.Observer.Observer.notify_context" title="Permalink to this definition"></a></dt>
+<dd><p>Get the notification context.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The notify context.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="puremvc.patterns.observer.Observer.Observer.notify_method">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">notify_method</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="puremvc.interfaces.html#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification"><span class="pre">INotification</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#puremvc.patterns.observer.Observer.Observer.notify_method" title="Permalink to this definition"></a></dt>
+<dd><p>Get the notification method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The notify method.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Callable[[<a class="reference internal" href="puremvc.interfaces.html#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification">INotification</a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.patterns.observer.Observer.Observer.notify_observer">
+<span class="sig-name descname"><span class="pre">notify_observer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notification</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="puremvc.interfaces.html#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification"><span class="pre">INotification</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.patterns.observer.Observer.Observer.notify_observer" title="Permalink to this definition"></a></dt>
+<dd><p>Notify the interested object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>notification</strong> (<a class="reference internal" href="puremvc.interfaces.html#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification"><em>INotification</em></a>) – The <cite>INotification</cite> to pass to the interested</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+<section id="module-puremvc.patterns.observer">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-puremvc.patterns.observer" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="puremvc.patterns.mediator.html" class="btn btn-neutral float-left" title="puremvc.patterns.mediator package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="puremvc.patterns.proxy.html" class="btn btn-neutral float-right" title="puremvc.patterns.proxy package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Saad Shams.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

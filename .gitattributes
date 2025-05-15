@@ -1,0 +1,6 @@
+# Detect Python code only from these folders
+src/** linguist-detectable=true
+test/** linguist-detectable=true
+
+# Ignore documentation and build artifacts in language stats
+docs/** linguist-detectable=false

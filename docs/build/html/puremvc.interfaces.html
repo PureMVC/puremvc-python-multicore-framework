@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>puremvc.interfaces package &mdash; PureMVC BSD 3-Clause License documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="puremvc.patterns package" href="puremvc.patterns.html" />
+    <link rel="prev" title="puremvc.core package" href="puremvc.core.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PureMVC
+          </a>
+              <div class="version">
+                2.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">puremvc</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="puremvc.html">puremvc package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="puremvc.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="puremvc.core.html">puremvc.core package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">puremvc.interfaces package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="puremvc.patterns.html">puremvc.patterns package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="puremvc.html#module-puremvc">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PureMVC</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">puremvc</a></li>
+          <li class="breadcrumb-item"><a href="puremvc.html">puremvc package</a></li>
+      <li class="breadcrumb-item active">puremvc.interfaces package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/puremvc.interfaces.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="puremvc-interfaces-package">
+<h1>puremvc.interfaces package<a class="headerlink" href="#puremvc-interfaces-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-puremvc.interfaces.ICommand">
+<span id="puremvc-interfaces-icommand-module"></span><h2>puremvc.interfaces.ICommand module<a class="headerlink" href="#module-puremvc.interfaces.ICommand" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="puremvc.interfaces.ICommand.ICommand">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">puremvc.interfaces.ICommand.</span></span><span class="sig-name descname"><span class="pre">ICommand</span></span><a class="headerlink" href="#puremvc.interfaces.ICommand.ICommand" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#puremvc.interfaces.INotifier.INotifier" title="puremvc.interfaces.INotifier.INotifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">INotifier</span></code></a></p>
+<p>The interface definition for a PureMVC Command</p>
+<section id="see-also">
+<h3>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading"></a></h3>
+<p><a class="reference internal" href="#module-puremvc.interfaces.INotification" title="puremvc.interfaces.INotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.interfaces.INotification</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.ICommand.ICommand.execute">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notification</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification"><span class="pre">INotification</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.interfaces.ICommand.ICommand.execute" title="Permalink to this definition"></a></dt>
+<dd><p>Execute the <cite>ICommand</cite>’s logic to handle a given <cite>INotification</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>notification</strong> (<a class="reference internal" href="#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification"><em>INotification</em></a>) – An <cite>INotification</cite> to handle.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+<section id="module-puremvc.interfaces.IController">
+<span id="puremvc-interfaces-icontroller-module"></span><h2>puremvc.interfaces.IController module<a class="headerlink" href="#module-puremvc.interfaces.IController" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="puremvc.interfaces.IController.IController">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">puremvc.interfaces.IController.</span></span><span class="sig-name descname"><span class="pre">IController</span></span><a class="headerlink" href="#puremvc.interfaces.IController.IController" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>The interface definition for a PureMVC Controller.</p>
+<p>In PureMVC, an <cite>IController</cite> implementor follows the ‘Command and Controller’ strategy, and
+assumes these responsibilities:</p>
+<p>Remembering which <cite>ICommand`s are intended to handle which `INotifications</cite>.</p>
+<p>Registering itself as an <cite>IObserver</cite> with the <cite>View</cite> for each <cite>INotification</cite>
+that it has an <cite>ICommand</cite> mapping for.</p>
+<p>Creating a new instance of the proper <cite>ICommand</cite> to handle a given <cite>INotification</cite> when notified by the <cite>View</cite>.</p>
+<p>Calling the <cite>ICommand</cite>’s <cite>execute</cite> method, passing in the <cite>INotification</cite>.</p>
+<section id="id1">
+<h3>See Also<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<p><a class="reference internal" href="#module-puremvc.interfaces.INotification" title="puremvc.interfaces.INotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.interfaces.INotification</span></code></a>
+<a class="reference internal" href="#module-puremvc.interfaces.ICommand" title="puremvc.interfaces.ICommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.interfaces.ICommand</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IController.IController.execute_command">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">execute_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notification</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification"><span class="pre">INotification</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.interfaces.IController.IController.execute_command" title="Permalink to this definition"></a></dt>
+<dd><p>Execute the <cite>ICommand</cite> previously registered as the handler for
+<cite>INotification</cite> with the given notification name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>notification</strong> (<a class="reference internal" href="#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification"><em>INotification</em></a>) – The <cite>INotification</cite> to execute the associated <cite>ICommand</cite> for</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IController.IController.has_command">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">has_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notification_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#puremvc.interfaces.IController.IController.has_command" title="Permalink to this definition"></a></dt>
+<dd><p>Check if a Command is registered for a given Notification.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>notification_name</strong> (<em>str</em>) – The name of the <cite>INotification</cite></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if a command is registered for the notification_name, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IController.IController.register_command">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notification_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#puremvc.interfaces.ICommand.ICommand" title="puremvc.interfaces.ICommand.ICommand"><span class="pre">ICommand</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.interfaces.IController.IController.register_command" title="Permalink to this definition"></a></dt>
+<dd><p>Register a particular <cite>ICommand</cite> class as the handler for a particular <cite>INotification</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>notification_name</strong> (<em>str</em>) – The name of the <cite>INotification</cite></p></li>
+<li><p><strong>factory</strong> (<em>Callable</em><em>[</em><em>[</em><em>]</em><em>, </em><a class="reference internal" href="#puremvc.interfaces.ICommand.ICommand" title="puremvc.interfaces.ICommand.ICommand"><em>ICommand</em></a><em>]</em>) – A factory function that returns an instance of ICommand.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IController.IController.remove_command">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">remove_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notification_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.interfaces.IController.IController.remove_command" title="Permalink to this definition"></a></dt>
+<dd><p>Remove a previously registered <cite>ICommand</cite> to <cite>INotification</cite> mapping.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>notification_name</strong> (<em>str</em>) – The name of the <cite>INotification</cite> to remove the <cite>ICommand</cite> mapping for</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+<section id="module-puremvc.interfaces.IFacade">
+<span id="puremvc-interfaces-ifacade-module"></span><h2>puremvc.interfaces.IFacade module<a class="headerlink" href="#module-puremvc.interfaces.IFacade" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="puremvc.interfaces.IFacade.IFacade">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">puremvc.interfaces.IFacade.</span></span><span class="sig-name descname"><span class="pre">IFacade</span></span><a class="headerlink" href="#puremvc.interfaces.IFacade.IFacade" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#puremvc.interfaces.INotifier.INotifier" title="puremvc.interfaces.INotifier.INotifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">INotifier</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>The interface definition for a PureMVC Facade.</p>
+<p>The Facade Pattern suggests providing a single class to act as a central point of communication
+for a subsystem.</p>
+<p>In PureMVC, the Facade acts as an interface between the core MVC actors (Model, View, Controller) and
+the rest of your application.</p>
+<p><a class="reference internal" href="#module-puremvc.interfaces.IModel" title="puremvc.interfaces.IModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.interfaces.IModel</span></code></a>
+<a class="reference internal" href="#module-puremvc.interfaces.IView" title="puremvc.interfaces.IView"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.interfaces.IView</span></code></a>
+<a class="reference internal" href="#module-puremvc.interfaces.IController" title="puremvc.interfaces.IController"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.interfaces.IController</span></code></a>
+<a class="reference internal" href="#module-puremvc.interfaces.ICommand" title="puremvc.interfaces.ICommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.interfaces.ICommand</span></code></a>
+<a class="reference internal" href="#module-puremvc.interfaces.INotification" title="puremvc.interfaces.INotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.interfaces.INotification</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IFacade.IFacade.has_command">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">has_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notification_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#puremvc.interfaces.IFacade.IFacade.has_command" title="Permalink to this definition"></a></dt>
+<dd><p>Check if a Command is registered for a given <cite>Notification</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>notification_name</strong> (<em>str</em>) – The name of the notification to check.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if a command exists for the given <cite>notification_name</cite>, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IFacade.IFacade.has_mediator">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">has_mediator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mediator_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#puremvc.interfaces.IFacade.IFacade.has_mediator" title="Permalink to this definition"></a></dt>
+<dd><p>Check if a Mediator is registered or not</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mediator_name</strong> (<em>str</em>) – The name of the mediator to check for.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the mediator exists, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IFacade.IFacade.has_proxy">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">has_proxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#puremvc.interfaces.IFacade.IFacade.has_proxy" title="Permalink to this definition"></a></dt>
+<dd><p>Check if a Proxy is registered</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>proxy_name</strong> (<em>str</em>) – The name of the proxy to check.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the proxy is currently registered, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IFacade.IFacade.notify_observers">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">notify_observers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notification</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification"><span class="pre">INotification</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.interfaces.IFacade.IFacade.notify_observers" title="Permalink to this definition"></a></dt>
+<dd><p>Notify <cite>Observer</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>notification</strong> (<a class="reference internal" href="#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification"><em>INotification</em></a>) – The <cite>INotification</cite> to have the <cite>View</cite> notify <cite>Observers</cite> of.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IFacade.IFacade.register_command">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notification_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#puremvc.interfaces.ICommand.ICommand" title="puremvc.interfaces.ICommand.ICommand"><span class="pre">ICommand</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.interfaces.IFacade.IFacade.register_command" title="Permalink to this definition"></a></dt>
+<dd><p>Register an <cite>ICommand</cite> with the <cite>Controller</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>notification_name</strong> (<em>str</em>) – The name of the <cite>INotification</cite> to associate the <cite>ICommand</cite> with.</p></li>
+<li><p><strong>factory</strong> (<em>Callable</em><em>[</em><em>[</em><em>]</em><em>, </em><a class="reference internal" href="#puremvc.interfaces.ICommand.ICommand" title="puremvc.interfaces.ICommand.ICommand"><em>ICommand</em></a><em>]</em>) – A callable factory function that creates an instance of <cite>ICommand</cite>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IFacade.IFacade.register_mediator">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register_mediator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mediator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#puremvc.interfaces.IMediator.IMediator" title="puremvc.interfaces.IMediator.IMediator"><span class="pre">IMediator</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.interfaces.IFacade.IFacade.register_mediator" title="Permalink to this definition"></a></dt>
+<dd><p>Register an <cite>IMediator</cite> instance with the <cite>View</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mediator</strong> (<a class="reference internal" href="#puremvc.interfaces.IMediator.IMediator" title="puremvc.interfaces.IMediator.IMediator"><em>IMediator</em></a>) – A reference to the <cite>IMediator</cite> instance</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IFacade.IFacade.register_proxy">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register_proxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#puremvc.interfaces.IProxy.IProxy" title="puremvc.interfaces.IProxy.IProxy"><span class="pre">IProxy</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.interfaces.IFacade.IFacade.register_proxy" title="Permalink to this definition"></a></dt>
+<dd><p>Register a <cite>Proxy</cite> with the <cite>Model</cite> by name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>proxy</strong> (<a class="reference internal" href="#puremvc.interfaces.IProxy.IProxy" title="puremvc.interfaces.IProxy.IProxy"><em>IProxy</em></a>) – The <cite>IProxy</cite> to be registered with the <cite>Model</cite>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IFacade.IFacade.remove_command">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">remove_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notification_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.interfaces.IFacade.IFacade.remove_command" title="Permalink to this definition"></a></dt>
+<dd><p>Remove a previously registered <cite>ICommand</cite> to <cite>INotification</cite> mapping from the Controller.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>notification_name</strong> (<em>str</em>) – The name of the <cite>INotification</cite> to remove the <cite>ICommand</cite> mapping for</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IFacade.IFacade.remove_mediator">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">remove_mediator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mediator_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#puremvc.interfaces.IMediator.IMediator" title="puremvc.interfaces.IMediator.IMediator"><span class="pre">IMediator</span></a></span></span><a class="headerlink" href="#puremvc.interfaces.IFacade.IFacade.remove_mediator" title="Permalink to this definition"></a></dt>
+<dd><p>Remove a <cite>IMediator</cite> instance from the <cite>View</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mediator_name</strong> (<em>str</em>) – name of the <cite>IMediator</cite> instance to be removed.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The <cite>IMediator</cite> instance previously registered with the given <cite>mediator_name</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IFacade.IFacade.remove_proxy">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">remove_proxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#puremvc.interfaces.IProxy.IProxy" title="puremvc.interfaces.IProxy.IProxy"><span class="pre">IProxy</span></a></span></span><a class="headerlink" href="#puremvc.interfaces.IFacade.IFacade.remove_proxy" title="Permalink to this definition"></a></dt>
+<dd><p>Remove an <cite>IProxy</cite> instance from the <cite>Model</cite> by name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>proxy_name</strong> (<em>str</em>) – The <cite>IProxy</cite> to remove from the <cite>Model</cite>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the <cite>IProxy</cite> that was removed from the <cite>Model</cite></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#puremvc.interfaces.IProxy.IProxy" title="puremvc.interfaces.IProxy.IProxy">IProxy</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IFacade.IFacade.retrieve_mediator">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">retrieve_mediator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mediator_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#puremvc.interfaces.IMediator.IMediator" title="puremvc.interfaces.IMediator.IMediator"><span class="pre">IMediator</span></a></span></span><a class="headerlink" href="#puremvc.interfaces.IFacade.IFacade.retrieve_mediator" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve an <cite>IMediator</cite> instance from the <cite>View</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mediator_name</strong> (<em>str</em>) – The name of the <cite>IMediator</cite> instance to retrieve</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The mediator object found, of type IMediator.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IFacade.IFacade.retrieve_proxy">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">retrieve_proxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#puremvc.interfaces.IProxy.IProxy" title="puremvc.interfaces.IProxy.IProxy"><span class="pre">IProxy</span></a></span></span><a class="headerlink" href="#puremvc.interfaces.IFacade.IFacade.retrieve_proxy" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve a <cite>IProxy</cite> from the <cite>Model</cite> by name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>proxy_name</strong> (<em>str</em>) – The name of the <cite>IProxy</cite> instance to be retrieved.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the <cite>IProxy</cite> previously registered by <cite>proxyName</cite> with the <cite>Model</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-puremvc.interfaces.IMediator">
+<span id="puremvc-interfaces-imediator-module"></span><h2>puremvc.interfaces.IMediator module<a class="headerlink" href="#module-puremvc.interfaces.IMediator" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="puremvc.interfaces.IMediator.IMediator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">puremvc.interfaces.IMediator.</span></span><span class="sig-name descname"><span class="pre">IMediator</span></span><a class="headerlink" href="#puremvc.interfaces.IMediator.IMediator" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#puremvc.interfaces.INotifier.INotifier" title="puremvc.interfaces.INotifier.INotifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">INotifier</span></code></a></p>
+<p>The base interface for all Mediator classes.</p>
+<p>In PureMVC, <cite>IMediator</cite> implementors assume these responsibilities:</p>
+<p>Implement a common method which returns a list of all <cite>INotification</cite>
+the <cite>IMediator</cite> has interest in implementing a notification callback method.
+Implement methods that are called when the IMediator is registered or removed from the View.</p>
+<p>Additionally, <cite>IMediator</cite> typically:</p>
+<p>Act as an intermediary between one or more view components such as text boxes or
+list controls, maintaining references and coordinating their behavior.</p>
+<p>In Flash-based apps, this is often the place where event listeners are
+added to view components, and their handlers implemented.</p>
+<p>Respond to and generate <cite>INotifications</cite>, interacting with of
+the rest of the PureMVC app.</p>
+<p>When an <cite>IMediator</cite> is registered with the <cite>IView</cite>,
+the <cite>IView</cite> will call the <cite>IMediator</cite>’s
+<cite>list_notification_interests</cite> method. The <cite>IMediator</cite> will
+return an <cite>Array</cite> of <cite>INotification</cite> names which
+it wishes to be notified about.</p>
+<p>The <cite>IView</cite> will then create an <cite>Observer</cite> object
+encapsulating that <cite>IMediator</cite>’s (<cite>handle_notification</cite>) method
+and register it as an Observer for each <cite>INotification</cite> name returned by
+<cite>list_notification_interests</cite>.</p>
+<section id="id2">
+<h3>See Also<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<p><a class="reference internal" href="#module-puremvc.interfaces.INotification" title="puremvc.interfaces.INotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.interfaces.INotification</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IMediator.IMediator.handle_notification">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">handle_notification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notification</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification"><span class="pre">INotification</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.interfaces.IMediator.IMediator.handle_notification" title="Permalink to this definition"></a></dt>
+<dd><p>Handle an <cite>INotification</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>notification</strong> (<a class="reference internal" href="#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification"><em>INotification</em></a>) – The <cite>INotification</cite> to be handled</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IMediator.IMediator.list_notification_interests">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">list_notification_interests</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">[&lt;class</span> <span class="pre">'str'&gt;]</span></span></span><a class="headerlink" href="#puremvc.interfaces.IMediator.IMediator.list_notification_interests" title="Permalink to this definition"></a></dt>
+<dd><p>List <cite>INotification</cite> interests.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list containing strings representing the notification interests.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="puremvc.interfaces.IMediator.IMediator.mediator_name">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mediator_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#puremvc.interfaces.IMediator.IMediator.mediator_name" title="Permalink to this definition"></a></dt>
+<dd><p>Get the <cite>IMediator</cite> instance name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The <cite>IMediator</cite> instance name</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IMediator.IMediator.on_register">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">on_register</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.interfaces.IMediator.IMediator.on_register" title="Permalink to this definition"></a></dt>
+<dd><p>Called by the View when the Mediator is registered
+:return: None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IMediator.IMediator.on_remove">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">on_remove</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.interfaces.IMediator.IMediator.on_remove" title="Permalink to this definition"></a></dt>
+<dd><p>Called by the View when the Mediator is removed
+:return: None</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="puremvc.interfaces.IMediator.IMediator.view_component">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">view_component</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><a class="headerlink" href="#puremvc.interfaces.IMediator.IMediator.view_component" title="Permalink to this definition"></a></dt>
+<dd><p>Get the <cite>IMediator</cite>’s view component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The view component.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+<section id="module-puremvc.interfaces.IModel">
+<span id="puremvc-interfaces-imodel-module"></span><h2>puremvc.interfaces.IModel module<a class="headerlink" href="#module-puremvc.interfaces.IModel" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="puremvc.interfaces.IModel.IModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">puremvc.interfaces.IModel.</span></span><span class="sig-name descname"><span class="pre">IModel</span></span><a class="headerlink" href="#puremvc.interfaces.IModel.IModel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>The interface definition for a PureMVC Model.</p>
+<p>In PureMVC, <cite>IModel</cite> implementors provide
+access to <cite>IProxy</cite> objects by named look up.</p>
+<p>An <cite>IModel</cite> assumes these responsibilities:</p>
+<p>Maintain a cache of <cite>IProxy</cite> instances
+Provide methods for registering, retrieving, and removing <cite>IProxy</cite> instances</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IModel.IModel.has_proxy">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">has_proxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#puremvc.interfaces.IModel.IModel.has_proxy" title="Permalink to this definition"></a></dt>
+<dd><p>Check if a proxy with the given name is registered.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>proxy_name</strong> (<em>str</em>) – The name of the proxy to check.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the proxy is registered, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IModel.IModel.register_proxy">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register_proxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#puremvc.interfaces.IProxy.IProxy" title="puremvc.interfaces.IProxy.IProxy"><span class="pre">IProxy</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.interfaces.IModel.IModel.register_proxy" title="Permalink to this definition"></a></dt>
+<dd><p>Register an <cite>IProxy</cite> instance with the <cite>Model</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>proxy</strong> (<a class="reference internal" href="#puremvc.interfaces.IProxy.IProxy" title="puremvc.interfaces.IProxy.IProxy"><em>IProxy</em></a>) – An object reference to be held by the <cite>Model</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IModel.IModel.remove_proxy">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">remove_proxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#puremvc.interfaces.IProxy.IProxy" title="puremvc.interfaces.IProxy.IProxy"><span class="pre">IProxy</span></a></span></span><a class="headerlink" href="#puremvc.interfaces.IModel.IModel.remove_proxy" title="Permalink to this definition"></a></dt>
+<dd><p>Remove an <cite>IProxy</cite> instance from the Model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>proxy_name</strong> (<em>str</em>) – The name of the proxy to remove.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The <cite>IProxy</cite> instance that was removed from the Model.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#puremvc.interfaces.IProxy.IProxy" title="puremvc.interfaces.IProxy.IProxy">IProxy</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IModel.IModel.retrieve_proxy">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">retrieve_proxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#puremvc.interfaces.IProxy.IProxy" title="puremvc.interfaces.IProxy.IProxy"><span class="pre">IProxy</span></a></span></span><a class="headerlink" href="#puremvc.interfaces.IModel.IModel.retrieve_proxy" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve an <cite>IProxy</cite> instance from the Model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>proxy_name</strong> (<em>str</em>) – The name of the proxy to retrieve.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The <cite>IProxy</cite> instance previously registered with the given <cite>proxy_name</cite>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#puremvc.interfaces.IProxy.IProxy" title="puremvc.interfaces.IProxy.IProxy">IProxy</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-puremvc.interfaces.INotification">
+<span id="puremvc-interfaces-inotification-module"></span><h2>puremvc.interfaces.INotification module<a class="headerlink" href="#module-puremvc.interfaces.INotification" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="puremvc.interfaces.INotification.INotification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">puremvc.interfaces.INotification.</span></span><span class="sig-name descname"><span class="pre">INotification</span></span><a class="headerlink" href="#puremvc.interfaces.INotification.INotification" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>The interface definition for a PureMVC Notification.</p>
+<p>PureMVC does not rely upon underlying event models such
+as the one provided with Flash, and ActionScript 3 does
+not have an inherent event model.</p>
+<p>The Observer Pattern as implemented within PureMVC exists
+to support event-driven communication between the
+application and the actors of the MVC triad.</p>
+<p>Notifications are not meant to be a replacement for Events
+in Flex/Flash/AIR. Generally, <cite>IMediator</cite> implementors
+place event listeners on their view components, which they
+then handle in the usual way. This may lead to the broadcast of <cite>Notification</cite> to
+trigger <cite>ICommand</cite> or to communicate with other <cite>IMediator</cite>, <cite>IProxy</cite> and <cite>ICommand</cite>
+instances communicate with each other and <cite>IMediator</cite> by broadcasting <cite>INotification</cite>.</p>
+<p>A key difference between Flash <cite>Event</cite> and PureMVC
+<cite>Notification</cite> is that <cite>Event</cite> follows the
+‘Chain of Responsibility’ pattern, ‘bubbling’ up the display hierarchy
+until some parent component handles the <cite>Event</cite>, while
+PureMVC <cite>Notification</cite> follows a ‘Publish/Subscribe’
+pattern. PureMVC classes need not be related to each other in a
+parent/child relationship to communicate with one another
+using <cite>Notification</cite>.</p>
+<section id="id3">
+<h3>See Also<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
+<p><a class="reference internal" href="#module-puremvc.interfaces.IView" title="puremvc.interfaces.IView"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.interfaces.IView</span></code></a>
+<a class="reference internal" href="#module-puremvc.interfaces.IObserver" title="puremvc.interfaces.IObserver"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.interfaces.IObserver</span></code></a></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="puremvc.interfaces.INotification.INotification.body">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">body</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><a class="headerlink" href="#puremvc.interfaces.INotification.INotification.body" title="Permalink to this definition"></a></dt>
+<dd><p>Get the body of the <cite>INotification</cite> instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The body of the method.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="puremvc.interfaces.INotification.INotification.name">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#puremvc.interfaces.INotification.INotification.name" title="Permalink to this definition"></a></dt>
+<dd><p>Get the name of the <cite>INotification</cite> instance.
+No setter, it should be set by constructor only</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The name of the object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="puremvc.interfaces.INotification.INotification.type">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#puremvc.interfaces.INotification.INotification.type" title="Permalink to this definition"></a></dt>
+<dd><p>Get the type of the <cite>INotification</cite> instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The type of the object.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+<section id="module-puremvc.interfaces.INotifier">
+<span id="puremvc-interfaces-inotifier-module"></span><h2>puremvc.interfaces.INotifier module<a class="headerlink" href="#module-puremvc.interfaces.INotifier" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="puremvc.interfaces.INotifier.INotifier">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">puremvc.interfaces.INotifier.</span></span><span class="sig-name descname"><span class="pre">INotifier</span></span><a class="headerlink" href="#puremvc.interfaces.INotifier.INotifier" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>The interface definition for a PureMVC Notifier.</p>
+<p><cite>MacroCommand, Command, Mediator</cite> and <cite>Proxy</cite>
+all have a need to send <cite>Notifications</cite>.</p>
+<p>The <cite>INotifier</cite> interface provides a common method called
+<cite>send_notification</cite> that relieves implementation code of
+the necessity to actually construct <cite>Notifications</cite>.</p>
+<p>The <cite>Notifier</cite> class, which all the above-mentioned classes
+extend, also provides an initialized reference to the <cite>Facade</cite>
+Singleton, which is required for the convenience method
+for sending <cite>Notifications</cite>, but also eases implementation as these
+classes have frequent <cite>Facade</cite> interactions and usually require
+access to the facade anyway.</p>
+<section id="id4">
+<h3>See Also<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
+<p><a class="reference internal" href="#module-puremvc.interfaces.IFacade" title="puremvc.interfaces.IFacade"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.interfaces.IFacade</span></code></a>
+<a class="reference internal" href="#module-puremvc.interfaces.INotification" title="puremvc.interfaces.INotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.interfaces.INotification</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.INotifier.INotifier.initialize_notifier">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialize_notifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.interfaces.INotifier.INotifier.initialize_notifier" title="Permalink to this definition"></a></dt>
+<dd><p>Initialise this <cite>INotifier</cite> instance.</p>
+<p>This is how a <cite>Notifier</cite> gets its <cite>multiton_key</cite>. Calls to <cite>send_notification</cite>
+or to access the facade will fail until after this method has been
+called.</p>
+<p>&#64;param key: The <cite>multiton_key</cite> for this <cite>INotifier</cite> to use</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.INotifier.INotifier.send_notification">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_notification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notification_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.interfaces.INotifier.INotifier.send_notification" title="Permalink to this definition"></a></dt>
+<dd><p>Send a <cite>INotification</cite>.</p>
+<p>Convenience method to prevent having to construct new notification
+instances in our implementation code.</p>
+<p>&#64;param notification_name: The name of the notification to send
+&#64;type notification_name: str
+&#64;param body: the body of the notification (optional)
+&#64;type body: Any
+&#64;param _type: the type of the notification (optional)
+&#64;type _type: str</p>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+<section id="module-puremvc.interfaces.IObserver">
+<span id="puremvc-interfaces-iobserver-module"></span><h2>puremvc.interfaces.IObserver module<a class="headerlink" href="#module-puremvc.interfaces.IObserver" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="puremvc.interfaces.IObserver.IObserver">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">puremvc.interfaces.IObserver.</span></span><span class="sig-name descname"><span class="pre">IObserver</span></span><a class="headerlink" href="#puremvc.interfaces.IObserver.IObserver" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>The interface definition for a PureMVC Observer.</p>
+<p>In PureMVC, <cite>IObserver</cite> implementors assume these responsibilities:</p>
+<p>Encapsulate the notification (callback) method of the interested object.</p>
+<p>Encapsulate the notification context of the interested object.</p>
+<p>Provide methods for setting the interested object notification method and context.</p>
+<p>Provide a method for notifying the interested object.</p>
+<p>PureMVC does not rely upon underlying event
+models such as the one provided with Flash,
+and ActionScript 3 does not have an inherent
+event model.</p>
+<p>The Observer Pattern as implemented within
+PureMVC exists to support event driven communication
+between the application and the actors of the
+MVC triad.</p>
+<p>An Observer is an object that encapsulates information
+about an interested object with a notification method that
+should be called when an <cite>INotification</cite> is broadcast. The Observer then
+acts as a proxy for notifying the interested object.</p>
+<p>Observers can receive <cite>Notification`s by having their
+`notify_observer</cite> method invoked, passing
+in an object implementing the <cite>INotification</cite> interface, such
+as a subclass of <cite>Notification</cite>.</p>
+<section id="id5">
+<h3>See Also<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h3>
+<p><a class="reference internal" href="#module-puremvc.interfaces.IView" title="puremvc.interfaces.IView"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.interfaces.IView</span></code></a>
+<a class="reference internal" href="#module-puremvc.interfaces.INotification" title="puremvc.interfaces.INotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.interfaces.INotification</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IObserver.IObserver.compare_notify_context">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">compare_notify_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#puremvc.interfaces.IObserver.IObserver.compare_notify_context" title="Permalink to this definition"></a></dt>
+<dd><p>Compare the given object to the notification context object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<em>Any</em>) – The object to compare.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>boolean indicating if the notification context and the object are the same.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="puremvc.interfaces.IObserver.IObserver.notify_context">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">notify_context</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><a class="headerlink" href="#puremvc.interfaces.IObserver.IObserver.notify_context" title="Permalink to this definition"></a></dt>
+<dd><p>Get the notify_context.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>notify context</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="puremvc.interfaces.IObserver.IObserver.notify_method">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">notify_method</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification"><span class="pre">INotification</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#puremvc.interfaces.IObserver.IObserver.notify_method" title="Permalink to this definition"></a></dt>
+<dd><p>Set the notification method.</p>
+<p>The notification method should take one parameter of type <cite>INotification</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The notification (callback) method of the interested object</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Callable[[<a class="reference internal" href="#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification">INotification</a>], None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IObserver.IObserver.notify_observer">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">notify_observer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notification</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification"><span class="pre">INotification</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.interfaces.IObserver.IObserver.notify_observer" title="Permalink to this definition"></a></dt>
+<dd><p>Notify the interested object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>notification</strong> (<a class="reference internal" href="#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification"><em>INotification</em></a>) – The <cite>INotification</cite> to pass to the interested object’s notification method</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+<section id="module-puremvc.interfaces.IProxy">
+<span id="puremvc-interfaces-iproxy-module"></span><h2>puremvc.interfaces.IProxy module<a class="headerlink" href="#module-puremvc.interfaces.IProxy" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="puremvc.interfaces.IProxy.IProxy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">puremvc.interfaces.IProxy.</span></span><span class="sig-name descname"><span class="pre">IProxy</span></span><a class="headerlink" href="#puremvc.interfaces.IProxy.IProxy" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#puremvc.interfaces.INotifier.INotifier" title="puremvc.interfaces.INotifier.INotifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">INotifier</span></code></a></p>
+<p>The interface definition for a PureMVC Proxy.</p>
+<p>In PureMVC, ‘IProxy’ implementors assume these responsibilities:&lt;/P&gt;</p>
+<p>Implement a common method which returns the name of the Proxy.
+Provide methods for setting and getting the data object.</p>
+<p>Additionally, ‘IProxy’s typically:</p>
+<p>Maintain references to one or more pieces of model data.
+Provide methods for manipulating that data.
+Generate ‘INotifications’ when their model data changes.
+Expose their name as a ‘public static const’ called ‘NAME’,
+if they are not instantiated multiple times.
+Encapsulate interaction with local or remote services used to fetch and persist model data.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="puremvc.interfaces.IProxy.IProxy.data">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><a class="headerlink" href="#puremvc.interfaces.IProxy.IProxy.data" title="Permalink to this definition"></a></dt>
+<dd><p>Get the data object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The data of the method.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IProxy.IProxy.on_register">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">on_register</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.interfaces.IProxy.IProxy.on_register" title="Permalink to this definition"></a></dt>
+<dd><p>Called by the Model when the Proxy is registered.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IProxy.IProxy.on_remove">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">on_remove</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.interfaces.IProxy.IProxy.on_remove" title="Permalink to this definition"></a></dt>
+<dd><p>Called by the Model when the Proxy is removed.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="puremvc.interfaces.IProxy.IProxy.proxy_name">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">proxy_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#puremvc.interfaces.IProxy.IProxy.proxy_name" title="Permalink to this definition"></a></dt>
+<dd><p>Get the Proxy name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The name of the proxy as a string.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-puremvc.interfaces.IView">
+<span id="puremvc-interfaces-iview-module"></span><h2>puremvc.interfaces.IView module<a class="headerlink" href="#module-puremvc.interfaces.IView" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="puremvc.interfaces.IView.IView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">puremvc.interfaces.IView.</span></span><span class="sig-name descname"><span class="pre">IView</span></span><a class="headerlink" href="#puremvc.interfaces.IView.IView" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>The interface definition for a PureMVC View.</p>
+<p>In PureMVC, <cite>IView</cite> implementors assume these responsibilities:</p>
+<p>In PureMVC, the <cite>View</cite> class assumes these responsibilities:</p>
+<p>Maintain a cache of <cite>IMediator</cite> instances.
+Provide methods for registering, retrieving, and removing <cite>IMediators</cite>.
+Managing the observer lists for each <cite>INotification</cite> in the application.
+Providing a method for attaching <cite>IObservers</cite> to an <cite>INotification</cite>’s observer list.
+Providing a method for broadcasting an <cite>INotification</cite>.
+Notifying the <cite>IObservers</cite> of a given <cite>INotification</cite> when it broadcast.</p>
+<section id="id6">
+<h3>See Also<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h3>
+<p><a class="reference internal" href="#module-puremvc.interfaces.IMediator" title="puremvc.interfaces.IMediator"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.interfaces.IMediator</span></code></a>
+<a class="reference internal" href="#module-puremvc.interfaces.IObserver" title="puremvc.interfaces.IObserver"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.interfaces.IObserver</span></code></a>
+<a class="reference internal" href="#module-puremvc.interfaces.INotification" title="puremvc.interfaces.INotification"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.interfaces.INotification</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IView.IView.has_mediator">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">has_mediator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mediator_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#puremvc.interfaces.IView.IView.has_mediator" title="Permalink to this definition"></a></dt>
+<dd><p>Check if a Mediator is registered or not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mediator_name</strong> (<em>str</em>) – Name of the <cite>IMediator</cite></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>whether a Mediator is registered with the given <cite>mediatorName</cite>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IView.IView.notify_observers">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">notify_observers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notification</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification"><span class="pre">INotification</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.interfaces.IView.IView.notify_observers" title="Permalink to this definition"></a></dt>
+<dd><p>Notify the <cite>IObservers</cite> for a particular <cite>INotification</cite>.</p>
+<p>All previously attached <cite>IObservers</cite> for this <cite>INotification</cite>’s
+list are notified and are passed a reference to the <cite>INotification</cite> in
+the order in which they were registered.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>notification</strong> (<a class="reference internal" href="#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification"><em>INotification</em></a>) – The <cite>INotification</cite> to notify <cite>IObservers</cite> of.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IView.IView.register_mediator">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register_mediator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mediator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#puremvc.interfaces.IMediator.IMediator" title="puremvc.interfaces.IMediator.IMediator"><span class="pre">IMediator</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.interfaces.IView.IView.register_mediator" title="Permalink to this definition"></a></dt>
+<dd><p>Register an <cite>IMediator</cite> instance with the <cite>View</cite>.</p>
+<p>Registers the <cite>IMediator</cite> so that it can be retrieved by name,
+and further interrogates the <cite>IMediator</cite> for its
+<cite>INotification</cite> interests.</p>
+<p>If the <cite>IMediator</cite> returns any <cite>INotification</cite>
+names to be notified about, an <cite>Observer</cite> is created encapsulating
+the <cite>IMediator</cite> instance’s <cite>handleNotification</cite> method
+and registering it as an <cite>Observer</cite> for all <cite>INotifications</cite> the
+<cite>IMediator</cite> is interested in.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mediator</strong> – A reference to the <cite>IMediator</cite> instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IView.IView.register_observer">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register_observer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notification_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#puremvc.interfaces.IObserver.IObserver" title="puremvc.interfaces.IObserver.IObserver"><span class="pre">IObserver</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.interfaces.IView.IView.register_observer" title="Permalink to this definition"></a></dt>
+<dd><p>Register an <cite>IObserver</cite> to be notified of <cite>INotifications</cite> with a
+given name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>notification_name</strong> (<em>str</em>) – The name of the <cite>INotifications</cite> to notify this <cite>IObserver</cite> of</p></li>
+<li><p><strong>observer</strong> (<a class="reference internal" href="#puremvc.interfaces.IObserver.IObserver" title="puremvc.interfaces.IObserver.IObserver"><em>IObserver</em></a>) – The <cite>IObserver</cite> to register</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IView.IView.remove_mediator">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">remove_mediator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mediator_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#puremvc.interfaces.IMediator.IMediator" title="puremvc.interfaces.IMediator.IMediator"><span class="pre">IMediator</span></a></span></span><a class="headerlink" href="#puremvc.interfaces.IView.IView.remove_mediator" title="Permalink to this definition"></a></dt>
+<dd><p>Remove an <cite>IMediator</cite> from the <cite>View</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mediator_name</strong> (<em>str</em>) – Name of the <cite>IMediator</cite> instance to be removed.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the <cite>IMediator</cite> that was removed from the <cite>View</cite></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#puremvc.interfaces.IMediator.IMediator" title="puremvc.interfaces.IMediator.IMediator">IMediator</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IView.IView.remove_observer">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">remove_observer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notification_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notify_context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.interfaces.IView.IView.remove_observer" title="Permalink to this definition"></a></dt>
+<dd><p>Remove a group of observers from the observer list for a given Notification name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>notification_name</strong> (<em>str</em>) – Which observer list to remove from</p></li>
+<li><p><strong>notify_context</strong> (<em>Any</em>) – Removed the observers with this object as their notify_context</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="puremvc.interfaces.IView.IView.retrieve_mediator">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">retrieve_mediator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mediator_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#puremvc.interfaces.IMediator.IMediator" title="puremvc.interfaces.IMediator.IMediator"><span class="pre">IMediator</span></a></span></span><a class="headerlink" href="#puremvc.interfaces.IView.IView.retrieve_mediator" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve an <cite>IMediator</cite> from the <cite>View</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mediator_name</strong> (<em>str</em>) – The name of the <cite>IMediator</cite> instance to retrieve.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The <cite>IMediator</cite> instance previously registered with the given <cite>mediatorName</cite>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#puremvc.interfaces.IMediator.IMediator" title="puremvc.interfaces.IMediator.IMediator">IMediator</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+<section id="module-puremvc.interfaces">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-puremvc.interfaces" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="puremvc.core.html" class="btn btn-neutral float-left" title="puremvc.core package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="puremvc.patterns.html" class="btn btn-neutral float-right" title="puremvc.patterns package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Saad Shams.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
