@@ -4,7 +4,8 @@ Release Date: 05/15/25
     Platform: Python 3
      Version: 2
     Revision: 0
-       Minor: 0
+       Minor: 1
       Author: Saad Shams <saad.shams@puremvc.org>
 --------------------------------------------------------------------------
-2.0 - Brand new implementation of ported code, equivalent to AS3 MultiCore Version 1.0.5.
+2.0.0 - Brand new implementation of ported code, equivalent to AS3 MultiCore Version 1.0.5.
+2.0.1 - Fix badge for README

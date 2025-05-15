@@ -36,7 +36,7 @@ index.rst
 -->
 
 ## Status
-Production - [Version 2.0](https://github.com/PureMVC/puremvc-python-multicore-framework/blob/master/VERSION)
+Production - [Version 2.0.1](https://github.com/PureMVC/puremvc-python-multicore-framework/blob/master/VERSION)
 
 ## Platforms / Technologies
 * [Python](http://en.wikipedia.org/wiki/Python_(programming_language))
