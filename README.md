@@ -3,7 +3,7 @@ PureMVC is a lightweight framework for creating applications based upon the clas
 
 The unit tests are included in this repository.
 
-* [API Docs](http://puremvc.org/pages/docs/Python/multicore-docs)
+* [API Docs](http://puremvc.org/pages/docs/Python/legacy/multicore)
 * [Discussion](http://forums.puremvc.org/index.php?topic=2057)
 * [Overview Presentation](http://puremvc.tv/#P002/)
 
@@ -14,7 +14,7 @@ Production - [Version 1.0.1](https://github.com/PureMVC/puremvc-python-multicore
 ![PureMVC Python MultiCore Unit Tests](http://puremvc.org/pages/images/screenshots/PureMVC-Shot-Python-MC-UnitTests.png)
 
 ## Platforms / Technologies
-* [Python](http://en.wikipedia.org/wiki/Python_(programming_language\))
+* [Python](http://en.wikipedia.org/wiki/Python_(programming_language))
 
 ## License
 * PureMVC MultiCore Framework for Python (Ported) - Copyright © 2012 Daniele Esposti
