@@ -1,4 +1,4 @@
-## [PureMVC](http://puremvc.github.com/) Python MultiCore Framework [![Python package](https://github.com/saadshams/puremvc-python-multicore-framework/actions/workflows/python-package.yml/badge.svg)](https://github.com/PureMVC/puremvc-python-multicore-framework/actions/workflows/python-package.yml)
+## [PureMVC](http://puremvc.github.com/) Python MultiCore Framework [![Python package](https://github.com/PureMVC/puremvc-python-multicore-framework/actions/workflows/python-package.yml/badge.svg)](https://github.com/PureMVC/puremvc-python-multicore-framework/actions/workflows/python-package.yml)
 
 PureMVC is a lightweight framework for creating applications based upon the classic [Model-View-Controller](http://en.wikipedia.org/wiki/Model-view-controller) design meta-pattern. It supports [modular programming](http://en.wikipedia.org/wiki/Modular_programming) through the use of [Multiton](http://en.wikipedia.org/wiki/Multiton) Core actors instead of the [Singleton](http://en.wikipedia.org/wiki/Singleton_pattern)s used in the [Standard Version](https://github.com/PureMVC/puremvc-python-standard-framework/wiki).
 
