@@ -5,7 +5,7 @@
 # Your reuse is governed by the BSD 3-Clause License
 
 from abc import abstractmethod
-from typing import Any
+from typing import Any, List
 
 from .INotification import INotification
 from .INotifier import INotifier
@@ -70,7 +70,7 @@ class IMediator(INotifier):
         pass
 
     @view_component.setter
-    def view_component(self, value: Any):
+    def view_component(self, value: Any) -> None:
         """
         Set the `IMediator`'s view component.
 
@@ -81,7 +81,7 @@ class IMediator(INotifier):
         pass
 
     @abstractmethod
-    def list_notification_interests(self) -> [str]:
+    def list_notification_interests(self) -> List[str]:
         """
         List `INotification` interests.
 
@@ -91,7 +91,7 @@ class IMediator(INotifier):
         pass
 
     @abstractmethod
-    def handle_notification(self, notification: INotification):
+    def handle_notification(self, notification: INotification) -> None:
         """
         Handle an `INotification`.
 
@@ -102,7 +102,7 @@ class IMediator(INotifier):
         pass
 
     @abstractmethod
-    def on_register(self):
+    def on_register(self) -> None:
         """
         Called by the View when the Mediator is registered
         :return: None
@@ -110,7 +110,7 @@ class IMediator(INotifier):
         pass
 
     @abstractmethod
-    def on_remove(self):
+    def on_remove(self) -> None:
         """
         Called by the View when the Mediator is removed
         :return: None

@@ -52,7 +52,7 @@ class IProxy(INotifier):
         pass
 
     @data.setter
-    def data(self, value: Any):
+    def data(self, value: Any) -> None:
         """
         Get the data object
 
@@ -63,11 +63,17 @@ class IProxy(INotifier):
         pass
 
     @abstractmethod
-    def on_register(self):
-        """Called by the Model when the Proxy is registered."""
+    def on_register(self) -> None:
+        """
+        Called by the Model when the Proxy is registered.
+        :return: None
+        """
         pass
 
     @abstractmethod
-    def on_remove(self):
-        """Called by the Model when the Proxy is removed."""
+    def on_remove(self) -> None:
+        """
+        Called by the Model when the Proxy is removed.
+        :return: None
+        """
         pass

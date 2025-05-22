@@ -5,7 +5,7 @@
 # Your reuse is governed by the BSD 3-Clause License
 
 from abc import abstractmethod, ABC
-from typing import Any
+from typing import Any, Optional
 
 
 class INotifier(ABC):
@@ -33,24 +33,25 @@ class INotifier(ABC):
     """
 
     @abstractmethod
-    def send_notification(self, notification_name: str, body: Any = None, _type: str = None):
+    def send_notification(self, notification_name: str, body: Any = None, type: Optional[str] = None) -> None:
         """
         Send a `INotification`.
 
         Convenience method to prevent having to construct new notification
         instances in our implementation code.
 
-        @param notification_name: The name of the notification to send
-        @type notification_name: str
-        @param body: the body of the notification (optional)
-        @type body: Any
-        @param _type: the type of the notification (optional)
-        @type _type: str
+        :param notification_name: The name of the notification to send
+        :type notification_name: str
+        :param body: the body of the notification (optional)
+        :type body: Any
+        :param type: the type of the notification (optional)
+        :type type: str
+        :return: None
         """
         pass
 
     @abstractmethod
-    def initialize_notifier(self, key: str):
+    def initialize_notifier(self, key: str) -> None:
         """
         Initialise this `INotifier` instance.
 
@@ -58,6 +59,8 @@ class INotifier(ABC):
         or to access the facade will fail until after this method has been
         called.
 
-        @param key: The `multiton_key` for this `INotifier` to use
+        :param key: The `multiton_key` for this `INotifier` to use
+        :type key: str
+        :return: None
         """
         pass

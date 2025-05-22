@@ -4,7 +4,7 @@
 # Copyright(c) 2025 Saad Shams <saad.shams@puremvc.org>
 # Your reuse is governed by the BSD 3-Clause License
 
-from typing import Any
+from typing import Any, Optional
 
 from puremvc.interfaces import INotification
 
@@ -43,17 +43,20 @@ class Notification(INotification):
     :class:`puremvc.patterns.observer.Observer`
     """
 
-    def __init__(self, name: str, body: Any = None, _type: str = None):
+    def __init__(self, name: str, body: Any = None, type: Optional[str] = None) -> None:
         """
         Constructor.
 
         :param name: name of the `Notification` instance. (required)
+        :type name: str
         :param body: the `Notification` body. (optional)
-        :param _type: The type of the note. Defaults to None.
+        :type body: Any
+        :param type: The type of the note. Defaults to None.
+        :type type: str
         """
         self._name = name
         self._body = body
-        self._type = _type
+        self._type = type
 
     @property
     def name(self) -> str:
@@ -76,39 +79,43 @@ class Notification(INotification):
         return self._body
 
     @body.setter
-    def body(self, body: Any):
+    def body(self, body: Any) -> None:
         """
         Set the body of the `Notification` instance.
 
         :param body: The new value for the body.
         :type body: Any
+        :return: None
         """
         self._body = body
 
     @property
-    def type(self) -> str:
+    def type(self) -> Optional[str]:
         """
         Get the body of the `Notification` instance.
 
         :return: The type of the object.
-        :rtype: str
+        :rtype: Optional[str]
         """
         return self._type
 
     @type.setter
-    def type(self, note_type: str):
+    def type(self, note_type: str) -> None:
         """
         Set the type of the `Notification` instance.
+        :param note_type: The new type for the `Notification` instance.
+        :type note_type: str
+        :return: None
         """
         self._type = note_type
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """
         Get the string representation of the `Notification` instance.
 
         :return: The string representation of the `Notification` instance.
+        :rtype: str
         """
-        body = "None" if self.body is None else repr(self.body)
-        _type = "None" if self.type is None else repr(self.type)
-        msg = "Notification Name: " + self.name + "\nBody:" + body + "\nType:" + _type
-        return msg
+        return ("Notification Name: " + self.name +
+                "\nBody:" + "None" if self.body is None else repr(self.body) +
+                "\nType:" + ("None" if self.type is None else repr(self.type)))

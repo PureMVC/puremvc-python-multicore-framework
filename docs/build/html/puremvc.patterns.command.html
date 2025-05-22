@@ -1,24 +1,21 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>puremvc.patterns.command package &mdash; PureMVC BSD 3-Clause License documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+  <title>puremvc.patterns.command package &mdash; PureMVC 2.0.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c2377ec0"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -37,9 +34,6 @@
           <a href="index.html" class="icon icon-home">
             PureMVC
           </a>
-              <div class="version">
-                2.0.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -93,15 +87,15 @@
            <div itemprop="articleBody">
              
   <section id="puremvc-patterns-command-package">
-<h1>puremvc.patterns.command package<a class="headerlink" href="#puremvc-patterns-command-package" title="Permalink to this heading"></a></h1>
+<h1>puremvc.patterns.command package<a class="headerlink" href="#puremvc-patterns-command-package" title="Link to this heading"></a></h1>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
 </section>
 <section id="module-puremvc.patterns.command.MacroCommand">
-<span id="puremvc-patterns-command-macrocommand-module"></span><h2>puremvc.patterns.command.MacroCommand module<a class="headerlink" href="#module-puremvc.patterns.command.MacroCommand" title="Permalink to this heading"></a></h2>
+<span id="puremvc-patterns-command-macrocommand-module"></span><h2>puremvc.patterns.command.MacroCommand module<a class="headerlink" href="#module-puremvc.patterns.command.MacroCommand" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="puremvc.patterns.command.MacroCommand.MacroCommand">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">puremvc.patterns.command.MacroCommand.</span></span><span class="sig-name descname"><span class="pre">MacroCommand</span></span><a class="headerlink" href="#puremvc.patterns.command.MacroCommand.MacroCommand" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">puremvc.patterns.command.MacroCommand.</span></span><span class="sig-name descname"><span class="pre">MacroCommand</span></span><a class="headerlink" href="#puremvc.patterns.command.MacroCommand.MacroCommand" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="puremvc.patterns.facade.html#puremvc.patterns.facade.Notifier.Notifier" title="puremvc.patterns.facade.Notifier.Notifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Notifier</span></code></a>, <a class="reference internal" href="puremvc.interfaces.html#puremvc.interfaces.ICommand.ICommand" title="puremvc.interfaces.ICommand.ICommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">ICommand</span></code></a></p>
 <p>A base <cite>ICommand</cite> implementation that executes other <cite>ICommand</cite>.</p>
 <p>A <cite>MacroCommand</cite> maintains a list of <cite>ICommand</cite> Class references called <cite>SubCommands</cite>.</p>
@@ -116,13 +110,13 @@ override the <cite>initialize_macro_command</cite> method,
 calling <cite>add_subcommand</cite> once for each <cite>SubCommand</cite>
 to be executed.</p>
 <section id="see-also">
-<h3>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading"></a></h3>
+<h3>See Also<a class="headerlink" href="#see-also" title="Link to this heading"></a></h3>
 <p><a class="reference internal" href="puremvc.core.html#module-puremvc.core.Controller" title="puremvc.core.Controller"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.core.Controller</span></code></a>
 <a class="reference internal" href="puremvc.patterns.observer.html#module-puremvc.patterns.observer.Notification" title="puremvc.patterns.observer.Notification"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.patterns.observer.Notification</span></code></a>
 <a class="reference internal" href="#module-puremvc.patterns.command.SimpleCommand" title="puremvc.patterns.command.SimpleCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.patterns.command.SimpleCommand</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="puremvc.patterns.command.MacroCommand.MacroCommand.add_subcommand">
-<span class="sig-name descname"><span class="pre">add_subcommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="puremvc.interfaces.html#puremvc.interfaces.ICommand.ICommand" title="puremvc.interfaces.ICommand.ICommand"><span class="pre">ICommand</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.patterns.command.MacroCommand.MacroCommand.add_subcommand" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">add_subcommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="puremvc.interfaces.html#puremvc.interfaces.ICommand.ICommand" title="puremvc.interfaces.ICommand.ICommand"><span class="pre">ICommand</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#puremvc.patterns.command.MacroCommand.MacroCommand.add_subcommand" title="Link to this definition"></a></dt>
 <dd><p>Add a <cite>SubCommand</cite>.</p>
 <p>The <cite>SubCommands</cite> will be called in First In/First Out (FIFO) order.</p>
 <dl class="field-list simple">
@@ -137,7 +131,7 @@ to be executed.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="puremvc.patterns.command.MacroCommand.MacroCommand.execute">
-<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notification</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="puremvc.interfaces.html#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification"><span class="pre">INotification</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.patterns.command.MacroCommand.MacroCommand.execute" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notification</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="puremvc.interfaces.html#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification"><span class="pre">INotification</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#puremvc.patterns.command.MacroCommand.MacroCommand.execute" title="Link to this definition"></a></dt>
 <dd><p>Execute this <cite>MacroCommand</cite>’s <cite>SubCommands</cite>.</p>
 <p>The <cite>SubCommands</cite> will be called in First In/First Out (FIFO)
 order.</p>
@@ -153,7 +147,7 @@ order.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="puremvc.patterns.command.MacroCommand.MacroCommand.initialize_macro_command">
-<span class="sig-name descname"><span class="pre">initialize_macro_command</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.patterns.command.MacroCommand.MacroCommand.initialize_macro_command" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">initialize_macro_command</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#puremvc.patterns.command.MacroCommand.MacroCommand.initialize_macro_command" title="Link to this definition"></a></dt>
 <dd><p>Initialize the <cite>MacroCommand</cite>.</p>
 <p>In your subclass, override this method to initialize the <cite>MacroCommand</cite> <cite>SubCommand</cite> list with <cite>ICommand</cite>
 class references like this:</p>
@@ -178,22 +172,22 @@ class references like this:</p>
 
 </section>
 <section id="module-puremvc.patterns.command.SimpleCommand">
-<span id="puremvc-patterns-command-simplecommand-module"></span><h2>puremvc.patterns.command.SimpleCommand module<a class="headerlink" href="#module-puremvc.patterns.command.SimpleCommand" title="Permalink to this heading"></a></h2>
+<span id="puremvc-patterns-command-simplecommand-module"></span><h2>puremvc.patterns.command.SimpleCommand module<a class="headerlink" href="#module-puremvc.patterns.command.SimpleCommand" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="puremvc.patterns.command.SimpleCommand.SimpleCommand">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">puremvc.patterns.command.SimpleCommand.</span></span><span class="sig-name descname"><span class="pre">SimpleCommand</span></span><a class="headerlink" href="#puremvc.patterns.command.SimpleCommand.SimpleCommand" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">puremvc.patterns.command.SimpleCommand.</span></span><span class="sig-name descname"><span class="pre">SimpleCommand</span></span><a class="headerlink" href="#puremvc.patterns.command.SimpleCommand.SimpleCommand" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="puremvc.patterns.facade.html#puremvc.patterns.facade.Notifier.Notifier" title="puremvc.patterns.facade.Notifier.Notifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Notifier</span></code></a>, <a class="reference internal" href="puremvc.interfaces.html#puremvc.interfaces.ICommand.ICommand" title="puremvc.interfaces.ICommand.ICommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">ICommand</span></code></a></p>
 <p>A base <cite>ICommand</cite> implementation.</p>
 <p>Your subclass should override the <cite>execute</cite>
 method where your business logic will handle the <cite>INotification</cite>.</p>
 <section id="id1">
-<h3>See Also<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<h3>See Also<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
 <p><a class="reference internal" href="puremvc.core.html#module-puremvc.core.Controller" title="puremvc.core.Controller"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.core.Controller</span></code></a>
 <a class="reference internal" href="puremvc.patterns.observer.html#module-puremvc.patterns.observer.Notification" title="puremvc.patterns.observer.Notification"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.patterns.observer.Notification</span></code></a>
 <a class="reference internal" href="#module-puremvc.patterns.command.MacroCommand" title="puremvc.patterns.command.MacroCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">puremvc.patterns.command.MacroCommand</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="puremvc.patterns.command.SimpleCommand.SimpleCommand.execute">
-<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notification</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="puremvc.interfaces.html#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification"><span class="pre">INotification</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#puremvc.patterns.command.SimpleCommand.SimpleCommand.execute" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notification</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="puremvc.interfaces.html#puremvc.interfaces.INotification.INotification" title="puremvc.interfaces.INotification.INotification"><span class="pre">INotification</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#puremvc.patterns.command.SimpleCommand.SimpleCommand.execute" title="Link to this definition"></a></dt>
 <dd><p>Fulfill the use-case initiated by the given <cite>INotification</cite>.</p>
 <p>In the Command Pattern, an application use-case typically
 begins with some user action, which results in an <cite>INotification</cite> being broadcast, which
@@ -213,7 +207,7 @@ is handled by business logic in the <cite>execute</cite> method of an <cite>ICom
 
 </section>
 <section id="module-puremvc.patterns.command">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-puremvc.patterns.command" title="Permalink to this heading"></a></h2>
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-puremvc.patterns.command" title="Link to this heading"></a></h2>
 </section>
 </section>
 

@@ -66,7 +66,7 @@ class INotification(ABC):
 
     @body.setter
     @abstractmethod
-    def body(self, body: Any):
+    def body(self, body: Any) -> None:
         """
         Set the body of the `INotification` instance
 
@@ -89,7 +89,7 @@ class INotification(ABC):
 
     @type.setter
     @abstractmethod
-    def type(self, _type: str):
+    def type(self, _type: str) -> None:
         """
         Set the type of the `INotification` instance
 
@@ -99,7 +99,8 @@ class INotification(ABC):
         """
         pass
 
-    def __repr__(self):
+    @abstractmethod
+    def __repr__(self) -> str:
         """
         Get the string representation of the `INotification` instance
 

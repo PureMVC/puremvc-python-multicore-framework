@@ -4,7 +4,7 @@
 # Copyright(c) 2025 Saad Shams <saad.shams@puremvc.org>
 # Your reuse is governed by the BSD 3-Clause License
 
-from typing import Any
+from typing import Any, Optional
 
 from puremvc.interfaces import IProxy
 from puremvc.patterns.facade import Notifier
@@ -35,12 +35,12 @@ class Proxy(IProxy, Notifier):
     """NAME (str): The name of the `Proxy`"""
     NAME = "Proxy"
 
-    def __init__(self, proxy_name: str = None, data: Any = None):
+    def __init__(self, proxy_name: Optional[str] = None, data: Any = None) -> None:
         """
         Constructor
 
         :param proxy_name: The name of the proxy. Defaults to None.
-        :type proxy_name: str
+        :type proxy_name: Optional[str]
         :param data: The data associated with the object. Defaults to None.
         :type data: Any
         """
@@ -69,7 +69,7 @@ class Proxy(IProxy, Notifier):
         return self._data
 
     @data.setter
-    def data(self, value: Any):
+    def data(self, value: Any) -> None:
         """
         Set the `Proxy` data
 
@@ -79,10 +79,16 @@ class Proxy(IProxy, Notifier):
         """
         self._data = value
 
-    def on_register(self):
-        """Called by the `Model` when the `Proxy` is registered"""
+    def on_register(self) -> None:
+        """
+        Called by the `Model` when the `Proxy` is registered
+        :return: None
+        """
         return
 
-    def on_remove(self):
-        """Called by the `Model` when the `Proxy` is removed"""
+    def on_remove(self) -> None:
+        """
+        Called by the `Model` when the `Proxy` is removed
+        :return: None
+        """
         return

@@ -5,7 +5,7 @@
 # Your reuse is governed by the BSD 3-Clause License
 
 import threading
-from typing import Dict, Callable, Any
+from typing import Dict, Callable, Any, Optional
 
 from puremvc.core import Controller, Model, View
 from puremvc.interfaces import IFacade, INotification, ICommand, IProxy, IMediator, IController, IModel, IView
@@ -43,7 +43,7 @@ class Facade(IFacade):
     """MULTITON_MSG (str): Multiton error message"""
     MULTITON_MSG = "Facade instance for this Multiton key already constructed!"
 
-    def __init__(self, key: str):
+    def __init__(self, key: str) -> None:
         """
         Constructor.
 
@@ -57,15 +57,15 @@ class Facade(IFacade):
         """
         if Facade.instanceMap.get(key) is not None:
             raise Exception(Facade.MULTITON_MSG)
-        self.multitonKey = None
-        self.controller = None
-        self.model = None
-        self.view = None
+        self.multitonKey = key
+        self.controller: Optional[IController] = None
+        self.model: Optional[IModel] = None
+        self.view: Optional[IView] = None
         self.initialize_notifier(key)
         Facade.instanceMap[key] = self
         self.initialize_facade()
 
-    def initialize_facade(self):
+    def initialize_facade(self) -> None:
         """
         Initialize the Multiton `Facade` instance.
 
@@ -80,7 +80,7 @@ class Facade(IFacade):
         self.initialize_view()
 
     @classmethod
-    def get_instance(cls, key: str, factory: Callable[[str], IFacade]) -> IFacade:
+    def get_instance(cls, key: str, factory: Callable[[str], IFacade]) -> Optional[IFacade]:
         """
         Facade Multiton Factory method
 
@@ -89,13 +89,14 @@ class Facade(IFacade):
         :param factory: A callable object that takes a string parameter and returns an instance of the IFacade interface
         :type factory: Callable[[str], IFacade]
         :return: the Multiton instance of the Facade
+        :rtype: Optional[IFacade]
         """
         with cls.instanceMapLock:
             if key not in cls.instanceMap:
                 cls.instanceMap[key] = factory(key)
         return cls.instanceMap.get(key)
 
-    def initialize_controller(self):
+    def initialize_controller(self) -> None:
         """
         Initialize the `Controller`.
 
@@ -117,9 +118,9 @@ class Facade(IFacade):
 
         :return: None
         """
-        self.controller: IController = Controller.get_instance(self.multitonKey, lambda k: Controller(k))
+        self.controller = Controller.get_instance(self.multitonKey, lambda k: Controller(k))
 
-    def initialize_model(self):
+    def initialize_model(self) -> None:
         """
         Initialize the `Model`.
 
@@ -144,9 +145,9 @@ class Facade(IFacade):
 
         :return: None
         """
-        self.model: IModel = Model.get_instance(self.multitonKey, lambda k: Model(k))
+        self.model = Model.get_instance(self.multitonKey, lambda k: Model(k))
 
-    def initialize_view(self):
+    def initialize_view(self) -> None:
         """
         Initialize the `View`.
 
@@ -170,19 +171,19 @@ class Facade(IFacade):
 
         :return: None
         """
-        self.view: IView = View.get_instance(self.multitonKey, lambda k: View(k))
+        self.view = View.get_instance(self.multitonKey, lambda k: View(k))
 
-    def register_command(self, notification_name: str, factory: Callable[[str], ICommand]):
+    def register_command(self, notification_name: str, factory: Callable[[], ICommand]) -> None:
         """
         Register an `ICommand` with the `Controller` by Notification name.
 
         :param notification_name: The name of the `INotification` to associate the `ICommand` with
         :type notification_name: str
         :param factory: A factory function that will be used to create instances of the `ICommand`.
-        :type factory: Callable[[str], ICommand]
+        :type factory: Callable[[], ICommand]
         :return: None
         """
-        self.controller.register_command(notification_name, factory)
+        if self.controller: self.controller.register_command(notification_name, factory)
 
     def has_command(self, notification_name: str) -> bool:
         """
@@ -192,9 +193,9 @@ class Facade(IFacade):
         :type notification_name: str
         :return: `True` if a command is registered for the notification, `False` otherwise.
         """
-        return self.controller.has_command(notification_name)
+        return self.controller.has_command(notification_name) if self.controller else False
 
-    def remove_command(self, notification_name: str):
+    def remove_command(self, notification_name: str) -> None:
         """
         Remove a previously registered `ICommand` to `INotification` mapping from the Controller.
 
@@ -202,9 +203,9 @@ class Facade(IFacade):
         :type notification_name: str
         :return: None
         """
-        self.controller.remove_command(notification_name)
+        if self.controller: self.controller.remove_command(notification_name)
 
-    def register_proxy(self, proxy: IProxy):
+    def register_proxy(self, proxy: IProxy) -> None:
         """
         Register an `IProxy` with the `Model` by name.
 
@@ -212,17 +213,18 @@ class Facade(IFacade):
         :type proxy: IProxy
         :return: None.
         """
-        self.model.register_proxy(proxy)
+        if self.model: self.model.register_proxy(proxy)
 
-    def retrieve_proxy(self, proxy_name: str) -> IProxy:
+    def retrieve_proxy(self, proxy_name: str) -> Optional[IProxy]:
         """
         Retrieve an `IProxy` from the `Model` by name.
 
         :param proxy_name: The name of the proxy to be retrieved.
         :type proxy_name: str
         :return: the `IProxy` instance previously registered with the given `proxyName`.
+        :rtype: Optional[IProxy]
         """
-        return self.model.retrieve_proxy(proxy_name)
+        return self.model.retrieve_proxy(proxy_name) if self.model else None
 
     def has_proxy(self, proxy_name: str) -> bool:
         """
@@ -232,19 +234,20 @@ class Facade(IFacade):
         :type proxy_name: str
         :return: True if the proxy exists, False otherwise.
         """
-        return self.model.has_proxy(proxy_name)
+        return self.model.has_proxy(proxy_name) if self.model else False
 
-    def remove_proxy(self, proxy_name: str) -> IProxy:
+    def remove_proxy(self, proxy_name: str) -> Optional[IProxy]:
         """
         Remove an `IProxy` from the `Model` by name.
 
         :param proxy_name: The `IProxy` to remove from the `Model`.
         :type proxy_name: IProxy
         :return: the `IProxy` that was removed from the `Model`
+        :rtype: Optional[IProxy]
         """
-        return self.model.remove_proxy(proxy_name)
+        return self.model.remove_proxy(proxy_name) if self.model else None
 
-    def register_mediator(self, mediator: IMediator):
+    def register_mediator(self, mediator: IMediator) -> None:
         """
         Register a `IMediator` with the `View`.
 
@@ -252,18 +255,18 @@ class Facade(IFacade):
         :type mediator: IMediator
         :return: None
         """
-        self.view.register_mediator(mediator)
+        if self.view: self.view.register_mediator(mediator)
 
-    def retrieve_mediator(self, mediator_name: str) -> IMediator:
+    def retrieve_mediator(self, mediator_name: str) -> Optional[IMediator]:
         """
         Retrieve an `IMediator` from the `View`.
 
         :param mediator_name: The name of the `IMediator`
         :type mediator_name: str
         :return: the `IMediator` previously registered with the given `mediator_name`.
-        :rtype: IMediator
+        :rtype: Optional[IMediator]
         """
-        return self.view.retrieve_mediator(mediator_name)
+        return self.view.retrieve_mediator(mediator_name) if self.view else None
 
     def has_mediator(self, mediator_name: str) -> bool:
         """
@@ -274,20 +277,20 @@ class Facade(IFacade):
         :return: True if the mediator with the specified name exists in the view, False otherwise.
         :rtype: bool
         """
-        return self.view.has_mediator(mediator_name)
+        return self.view.has_mediator(mediator_name) if self.view else False
 
-    def remove_mediator(self, mediator_name: str) -> IMediator:
+    def remove_mediator(self, mediator_name: str) -> Optional[IMediator]:
         """
         Remove an `IMediator` from the `View`.
 
         :param mediator_name: Name of the `IMediator` to be removed.
         :type mediator_name: str
         :return: The `IMediator` that was removed from the `View`
-        :rtype: IMediator
+        :rtype: Optional[IMediator]
         """
-        return self.view.remove_mediator(mediator_name)
+        return self.view.remove_mediator(mediator_name) if self.view else None
 
-    def send_notification(self, notification_name: str, body: Any = None, _type: str = None):
+    def send_notification(self, notification_name: str, body: Any = None, type: Optional[str] = None) -> None:
         """
         Create and send an `INotification`.
 
@@ -298,13 +301,13 @@ class Facade(IFacade):
         :type notification_name: str
         :param body: The body of the notification (optional).
         :type body: Any
-        :param _type: The type of the notification (optional).
-        :type _type: str
+        :param type: The type of the notification (optional).
+        :type type: Optional[str]
         :return: None
         """
-        self.notify_observers(Notification(notification_name, body, _type))
+        self.notify_observers(Notification(notification_name, body, type))
 
-    def notify_observers(self, notification: INotification):
+    def notify_observers(self, notification: INotification) -> None:
         """
         Notify `Observer`.
 
@@ -320,9 +323,10 @@ class Facade(IFacade):
         :type notification: INotification
         :return: None
         """
-        self.view.notify_observers(notification)
+        if self.view:
+            self.view.notify_observers(notification)
 
-    def initialize_notifier(self, key: str):
+    def initialize_notifier(self, key: str) -> None:
         """
         Set the Multiton key for this facade instance.
 
@@ -348,7 +352,7 @@ class Facade(IFacade):
         return cls.instanceMap.get(key) is not None
 
     @classmethod
-    def remove_core(cls, key: str):
+    def remove_core(cls, key: str) -> None:
         """
         Remove a Core.
 

@@ -15,8 +15,8 @@ project = 'PureMVC'
 copyright = '2025, Saad Shams'
 author = 'Saad Shams'
 
-version = '2.0.2'
-release = 'BSD 3-Clause License'
+version = '2.0'
+release = '2.0.2'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

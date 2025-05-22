@@ -35,20 +35,18 @@ class MacroCommand(Notifier, ICommand):
     :class:`puremvc.patterns.command.SimpleCommand`
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         """
         MacroCommand Constructor.
 
         You should not need to define a constructor, instead, override the `initialize_macro_command` method.
 
         If your subclass does define a constructor, be sure to call `super().__init__()`.
-
-        :return: None
         """
         super().__init__()
         self._subcommands: List[Callable[[], ICommand]] = []
 
-    def initialize_macro_command(self):
+    def initialize_macro_command(self) -> None:
         """
         Initialize the `MacroCommand`.
 
@@ -69,7 +67,7 @@ class MacroCommand(Notifier, ICommand):
         """
         return
 
-    def add_subcommand(self, factory: Callable[[], ICommand]):
+    def add_subcommand(self, factory: Callable[[], ICommand]) -> None:
         """
         Add a `SubCommand`.
 
@@ -81,7 +79,7 @@ class MacroCommand(Notifier, ICommand):
         """
         self._subcommands.append(factory)
 
-    def execute(self, notification: INotification):
+    def execute(self, notification: INotification) -> None:
         """
         Execute this `MacroCommand`'s `SubCommands`.
 
@@ -96,5 +94,6 @@ class MacroCommand(Notifier, ICommand):
         while self._subcommands:
             factory = self._subcommands.pop(0)
             command = factory()
+            if self.multitonKey is None: raise ValueError("multitonKey must not be None")
             command.initialize_notifier(self.multitonKey)
             command.execute(notification)

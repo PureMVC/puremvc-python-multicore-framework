@@ -49,6 +49,7 @@ class MacroCommandTest(unittest.TestCase):
 
         # Create the SimpleCommand
         command = MacroCommandTestCommand()
+        command.initialize_notifier("MacroCommandTestKey1")
 
         # Execute the SimpleCommand
         command.execute(note)

@@ -34,7 +34,7 @@ class IController(ABC):
     """
 
     @abstractmethod
-    def register_command(self, notification_name: str, factory: Callable[[], ICommand]):
+    def register_command(self, notification_name: str, factory: Callable[[], ICommand]) -> None:
         """
         Register a particular `ICommand` class as the handler for a particular `INotification`.
 
@@ -47,7 +47,7 @@ class IController(ABC):
         pass
 
     @abstractmethod
-    def execute_command(self, notification: INotification):
+    def execute_command(self, notification: INotification) -> None:
         """
         Execute the `ICommand` previously registered as the handler for
         `INotification` with the given notification name.
@@ -71,7 +71,7 @@ class IController(ABC):
         pass
 
     @abstractmethod
-    def remove_command(self, notification_name: str):
+    def remove_command(self, notification_name: str) -> None:
         """
         Remove a previously registered `ICommand` to `INotification` mapping.
 

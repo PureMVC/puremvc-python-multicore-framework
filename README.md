@@ -15,16 +15,21 @@ pip install PureMVC
 Documentation: Update version docs/source/conf.py
 Update: python3 -m pip install --upgrade pip
 Development: pip install -e .
+Type Testing: 
+  pip install mypy
+  mypy ./src
 Testing: pytest test/
 Build: python -m build
 Publish: twine upload dist/*
 
-Documentation: Generate
+Documentation: 
+Install: pip install sphinx sphinx_rtd_theme
+Generate: 
 mkdir docs && cd docs && sphinx-quickstart --sep -p PureMVC -a "Saad Shams" -v "2.0.0" -r "BSD 3-Clause License" -l "en"
-cd ../ && sphinx-apidoc -o docs/source src/puremvc && cd docs && make html && open build/html/index.html && cd ..
+cd ../ && sphinx-apidoc -o docs/source src/puremvc && cd docs && make html && cd .. && open docs/build/html/index.html
 
-Documentation: Update
-sphinx-apidoc -o docs/source src/puremvc --force && cd docs && make html && open build/html/index.html && cd ..
+Update
+sphinx-apidoc -o docs/source src/puremvc --force && cd docs && make html && cd .. && open docs/build/html/index.html
 
 conf.py
 import os

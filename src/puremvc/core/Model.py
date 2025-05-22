@@ -5,7 +5,7 @@
 # Your reuse is governed by the BSD 3-Clause License
 
 import threading
-from typing import Callable, Dict
+from typing import Callable, Dict, Optional
 
 from puremvc.interfaces import IModel, IProxy
 
@@ -37,7 +37,7 @@ class Model(IModel):
     """MULTITON_MSG (str): Multiton error message"""
     MULTITON_MSG = "Model multiton instance for this key is already constructed!"
 
-    def __init__(self, key: str):
+    def __init__(self, key: str) -> None:
         """
         Constructor.
 
@@ -55,10 +55,10 @@ class Model(IModel):
         self.multitonKey: str = key
         Model.instanceMap[key] = self
         self.proxyMap: Dict[str, IProxy] = dict()
-        self.proxyMapLock = threading.Lock()
+        self.proxyMapLock: threading.Lock = threading.Lock()
         self.initialize_model()
 
-    def initialize_model(self):
+    def initialize_model(self) -> None:
         """
         Initialize the `Model` instance.
 
@@ -71,7 +71,7 @@ class Model(IModel):
         return
 
     @classmethod
-    def get_instance(cls, key: str, factory: Callable[[str], IModel]) -> IModel:
+    def get_instance(cls, key: str, factory: Callable[[str], IModel]) -> Optional[IModel]:
         """
         Multiton Factory method.
 
@@ -80,13 +80,14 @@ class Model(IModel):
         :param factory: A factory function used to create new instances of `IModel`.
         :type factory: Callable[[str], IModel]
         :return: An instance of `IModel` associated with the given key.
+        :rtype: Optional[IModel]
         """
         with cls.instanceMapLock:
             if key not in cls.instanceMap:
                 cls.instanceMap[key] = factory(key)
         return cls.instanceMap.get(key)
 
-    def register_proxy(self, proxy: IProxy):
+    def register_proxy(self, proxy: IProxy) -> None:
         """
         Register an `IProxy` with the `Model`.
 
@@ -99,14 +100,14 @@ class Model(IModel):
             self.proxyMap[proxy.proxy_name] = proxy
         proxy.on_register()
 
-    def retrieve_proxy(self, proxy_name: str) -> IProxy:
+    def retrieve_proxy(self, proxy_name: str) -> Optional[IProxy]:
         """
         Retrieve an `IProxy` from the `Model`.
 
         :param proxy_name: The name of the proxy.
         :type proxy_name: str
         :return: the `IProxy` instance previously registered with the given `proxyName`.
-        :rtype: IProxy
+        :rtype: Optional[IProxy]
         """
         with self.proxyMapLock:
             return self.proxyMap.get(proxy_name)
@@ -123,14 +124,14 @@ class Model(IModel):
         with self.proxyMapLock:
             return self.proxyMap.get(proxy_name) is not None
 
-    def remove_proxy(self, proxy_name: str) -> IProxy:
+    def remove_proxy(self, proxy_name: str) -> Optional[IProxy]:
         """
         Remove an `IProxy` from the `Model`.
 
         :param proxy_name: The name of the `IProxy` to remove.
         :type proxy_name: str
         :return: the `IProxy` that was removed from the `Model`
-        :rtype: IProxy
+        :rtype: Optional[IProxy]
         """
         with self.proxyMapLock:
             proxy = self.proxyMap.get(proxy_name)
@@ -141,7 +142,7 @@ class Model(IModel):
         return proxy
 
     @classmethod
-    def remove_model(cls, key: str):
+    def remove_model(cls, key: str) -> None:
         """
         Remove an IModel instance
 

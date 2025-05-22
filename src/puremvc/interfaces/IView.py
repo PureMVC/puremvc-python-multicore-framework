@@ -5,7 +5,7 @@
 # Your reuse is governed by the BSD 3-Clause License
 
 from abc import ABC, abstractmethod
-from typing import Any
+from typing import Any, Optional
 
 from .IMediator import IMediator
 from .INotification import INotification
@@ -35,7 +35,7 @@ class IView(ABC):
     """
 
     @abstractmethod
-    def register_observer(self, notification_name: str, observer: IObserver):
+    def register_observer(self, notification_name: str, observer: IObserver) -> None:
         """
         Register an `IObserver` to be notified of `INotifications` with a
         given name.
@@ -44,11 +44,12 @@ class IView(ABC):
         :type notification_name: str
         :param observer: The `IObserver` to register
         :type observer: IObserver
+        :return: None
         """
         pass
 
     @abstractmethod
-    def notify_observers(self, notification: INotification):
+    def notify_observers(self, notification: INotification) -> None:
         """
         Notify the `IObservers` for a particular `INotification`.
 
@@ -58,11 +59,12 @@ class IView(ABC):
 
         :param notification: The `INotification` to notify `IObservers` of.
         :type notification: INotification
+        :return: None
         """
         pass
 
     @abstractmethod
-    def remove_observer(self, notification_name: str, notify_context: Any):
+    def remove_observer(self, notification_name: str, notify_context: Any) -> None:
         """
          Remove a group of observers from the observer list for a given Notification name.
 
@@ -70,11 +72,12 @@ class IView(ABC):
          :type notification_name: str
          :param notify_context: Removed the observers with this object as their notify_context
          :type notify_context: Any
+         :return: None
          """
         pass
 
     @abstractmethod
-    def register_mediator(self, mediator: IMediator):
+    def register_mediator(self, mediator: IMediator) -> None:
         """
           Register an `IMediator` instance with the `View`.
 
@@ -89,18 +92,20 @@ class IView(ABC):
           `IMediator` is interested in.
 
           :param mediator: A reference to the `IMediator` instance
+          :type mediator: IMediator
+          :return: None
           """
         pass
 
     @abstractmethod
-    def retrieve_mediator(self, mediator_name: str) -> IMediator:
+    def retrieve_mediator(self, mediator_name: str) -> Optional[IMediator]:
         """
         Retrieve an `IMediator` from the `View`.
 
         :param mediator_name: The name of the `IMediator` instance to retrieve.
         :type mediator_name: str
         :return: The `IMediator` instance previously registered with the given `mediatorName`.
-        :rtype: IMediator
+        :rtype: Optional[IMediator]
         """
         pass
 
@@ -117,13 +122,13 @@ class IView(ABC):
         pass
 
     @abstractmethod
-    def remove_mediator(self, mediator_name: str) -> IMediator:
+    def remove_mediator(self, mediator_name: str) -> Optional[IMediator]:
         """
          Remove an `IMediator` from the `View`.
 
          :param mediator_name: Name of the `IMediator` instance to be removed.
          :type mediator_name: str
          :return: the `IMediator` that was removed from the `View`
-         :rtype: IMediator
+         :rtype: Optional[IMediator]
          """
         pass

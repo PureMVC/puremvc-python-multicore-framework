@@ -23,7 +23,7 @@ class SimpleCommand(Notifier, ICommand):
     :class:`puremvc.patterns.command.MacroCommand`
     """
 
-    def execute(self, notification: INotification):
+    def execute(self, notification: INotification) -> None:
         """
         Fulfill the use-case initiated by the given `INotification`.
 

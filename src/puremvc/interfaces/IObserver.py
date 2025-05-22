@@ -66,7 +66,7 @@ class IObserver(ABC):
 
     @notify_method.setter
     @abstractmethod
-    def notify_method(self, value: Callable[[INotification], None]):
+    def notify_method(self, value: Callable[[INotification], None]) -> None:
         """
         Set the notification context.
 
@@ -88,7 +88,7 @@ class IObserver(ABC):
 
     @notify_context.setter
     @abstractmethod
-    def notify_context(self, value: Any):
+    def notify_context(self, value: Any) -> None:
         """
         Sets the value of the `notify_context` attribute.
 
@@ -99,12 +99,13 @@ class IObserver(ABC):
         pass
 
     @abstractmethod
-    def notify_observer(self, notification: INotification):
+    def notify_observer(self, notification: INotification) -> None:
         """
         Notify the interested object.
 
         :param notification: The `INotification` to pass to the interested object's notification method
         :type notification: INotification
+        :return: None
         """
         pass
 

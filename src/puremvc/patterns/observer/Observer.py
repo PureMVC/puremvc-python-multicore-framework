@@ -4,7 +4,7 @@
 # Copyright(c) 2025 Saad Shams <saad.shams@puremvc.org>
 # Your reuse is governed by the BSD 3-Clause License
 
-from typing import Any, Callable
+from typing import Any, Callable, Optional
 
 from puremvc.interfaces import IObserver, INotification
 
@@ -33,7 +33,7 @@ class Observer(IObserver):
     :class:`puremvc.patterns.observer.Notification`
     """
 
-    def __init__(self, notify_method: Callable[[INotification], None] = None, notify_context: Any = None):
+    def __init__(self, notify_method: Optional[Callable[[INotification], None]] = None, notify_context: object = None) -> None:
         """
         Constructor.
 
@@ -41,55 +41,56 @@ class Observer(IObserver):
         one parameter of type `INotification`
 
         :param notify_method: The notification method of the interested object
-        :type notify_method: Callable[[INotification], None]
+        :type notify_method: Optional[Callable[[INotification], None]]
         :param notify_context: the notification context of the interested object
-        :type notify_context: Any
+        :type notify_context: object
         """
-        self._notify_method = notify_method
-        self._notify_context = notify_context
+        self._notify_method: Optional[Callable[[INotification], None]] = notify_method
+        self._notify_context: object = notify_context
 
     @property
-    def notify_method(self) -> Callable[[INotification], None]:
+    def notify_method(self) -> Optional[Callable[[INotification], None]]:
         """
         Get the notification method.
 
         :return: The notify method.
-        :rtype: Callable[[INotification]]
+        :rtype: Optional[Callable[[INotification], None]
         """
         return self._notify_method
 
     @notify_method.setter
-    def notify_method(self, value: Callable[[INotification], None]):
+    def notify_method(self, value: Callable[[INotification], None]) -> None:
         """
         Set the notification context.
 
         :param value: A callable function that takes an INotification object as its parameter.
         :type value: Callable[[INotification], None]
+        :return: None
         """
         self._notify_method = value
 
     @property
-    def notify_context(self) -> Any:
+    def notify_context(self) -> object:
         """
         Get the notification context.
 
         :return: The notify context.
-        :rtype: Any
+        :rtype: object
         """
         return self._notify_context
 
     @notify_context.setter
-    def notify_context(self, value: Any):
+    def notify_context(self, value: object) -> None:
         """
         Set the notification context.
 
         :param value: The notification context (self) of the interested object.
-        :type value: Any
+        :type value: object
         :return: None
         """
         self._notify_context = value
 
-    def notify_observer(self, notification: INotification):
+    def notify_observer(self, notification: INotification) -> None:
         """
         Notify the interested object.
 
@@ -100,12 +101,12 @@ class Observer(IObserver):
         if self._notify_method is not None:
             self._notify_method(notification)
 
-    def compare_notify_context(self, obj: Any) -> bool:
+    def compare_notify_context(self, obj: object) -> bool:
         """
         Compare an object to the notification context.
 
         :param obj: The object to compare with the notify context.
-        :type obj: Any
+        :type obj: object
         :return: True if the given object is equal to the notify context, False otherwise.
         :rtype: bool
         """

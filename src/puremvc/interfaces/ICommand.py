@@ -20,7 +20,7 @@ class ICommand(INotifier):
     """
 
     @abstractmethod
-    def execute(self, notification: INotification):
+    def execute(self, notification: INotification) -> None:
         """
         Execute the `ICommand`'s logic to handle a given `INotification`.
 

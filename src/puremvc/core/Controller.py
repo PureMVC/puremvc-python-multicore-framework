@@ -5,7 +5,7 @@
 # Your reuse is governed by the BSD 3-Clause License
 
 import threading
-from typing import Dict, Callable
+from typing import Dict, Callable, Optional
 
 from puremvc.interfaces import IController, ICommand, IView, INotification
 from puremvc.patterns.observer import Observer
@@ -54,7 +54,7 @@ class Controller(IController):
     """MULTITON_MSG (str): Multiton error message"""
     MULTITON_MSG = "Controller multiton instance for this key is already constructed!"
 
-    def __init__(self, key: str):
+    def __init__(self, key: str) -> None:
         """
         This `IController` implementation is a Multiton, so you should not
         call the constructor directly, but instead call the static Factory
@@ -70,10 +70,11 @@ class Controller(IController):
         self.multitonKey: str = key
         Controller.instanceMap[key] = self
         self.commandMap: Dict[str, Callable[[], ICommand]] = dict()
-        self.view = None
+        self.commandMapLock: threading.Lock = threading.Lock()
+        self.view: Optional[IView] = None
         self.initialize_controller()
 
-    def initialize_controller(self):
+    def initialize_controller(self) -> None:
         """
         Initialize the Multiton `Controller` instance.
 
@@ -88,10 +89,10 @@ class Controller(IController):
 
         :return: None
         """
-        self.view: IView = View.get_instance(self.multitonKey, lambda key: View(key))
+        self.view = View.get_instance(self.multitonKey, lambda key: View(key))
 
     @classmethod
-    def get_instance(cls, key: str, factory: Callable[[str], IController]) -> IController:
+    def get_instance(cls, key: str, factory: Callable[[str], IController]) -> Optional[IController]:
         """
         `Controller` Multiton Factory method.
         
@@ -100,13 +101,14 @@ class Controller(IController):
         :param factory: A factory function that creates a new instance of IController based on the provided key.
         :type factory: Callable[[str], IController]
         :return: The instance of IController associated with the given key.
+        :rtype: Optional[IController]
         """
         with cls.instanceMapLock:
             if key not in cls.instanceMap:
                 cls.instanceMap[key] = factory(key)
         return cls.instanceMap.get(key)
 
-    def register_command(self, notification_name: str, factory: Callable[[], ICommand]):
+    def register_command(self, notification_name: str, factory: Callable[[], ICommand]) -> None:
         """
         Register a particular `ICommand` class as the handler for a particular
         `INotification`.
@@ -122,11 +124,13 @@ class Controller(IController):
         :param factory: Callable that returns an instance of ICommand.
         :return: None.
         """
-        if self.commandMap.get(notification_name) is None:
-            self.view.register_observer(notification_name, Observer(self.execute_command, self))
-        self.commandMap[notification_name] = factory
+        with self.commandMapLock:
+            if self.commandMap.get(notification_name) is None:
+                if self.view:
+                    self.view.register_observer(notification_name, Observer(self.execute_command, self))
+            self.commandMap[notification_name] = factory
 
-    def execute_command(self, notification: INotification):
+    def execute_command(self, notification: INotification) -> None:
         """
         Executes the specified command based on the given notification.
 
@@ -134,9 +138,10 @@ class Controller(IController):
         :type notification: INotification
         :return: None
         """
-        factory = self.commandMap.get(notification.name)
-        if factory is None:
-            return
+        with self.commandMapLock:
+            factory = self.commandMap.get(notification.name)
+        if factory is None: return
+
         command = factory()
         command.initialize_notifier(self.multitonKey)
         command.execute(notification)
@@ -150,9 +155,10 @@ class Controller(IController):
         :return: True if the `notification_name` exists in the `commandMap`, False otherwise.
         :rtype: bool
         """
-        return self.commandMap.get(notification_name) is not None
+        with self.commandMapLock:
+            return self.commandMap.get(notification_name) is not None
 
-    def remove_command(self, notification_name: str):
+    def remove_command(self, notification_name: str) -> None:
         """
         Remove a previously registered `ICommand` to `INotification` mapping.
 
@@ -160,12 +166,14 @@ class Controller(IController):
         :type notification_name: str
         :return: None
         """
-        if self.has_command(notification_name):
-            self.view.remove_observer(notification_name, self)
-            del self.commandMap[notification_name]
+        with self.commandMapLock:
+            if notification_name in self.commandMap:
+                if self.view:
+                    self.view.remove_observer(notification_name, self)
+                del self.commandMap[notification_name]
 
     @classmethod
-    def remove_controller(cls, key: str):
+    def remove_controller(cls, key: str) -> None:
         """
         Remove an IController instance
 

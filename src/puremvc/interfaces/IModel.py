@@ -5,6 +5,7 @@
 # Your reuse is governed by the BSD 3-Clause License
 
 from abc import ABC, abstractmethod
+from typing import Optional
 
 from .IProxy import IProxy
 
@@ -23,17 +24,18 @@ class IModel(ABC):
     """
 
     @abstractmethod
-    def register_proxy(self, proxy: IProxy):
+    def register_proxy(self, proxy: IProxy) -> None:
         """
         Register an `IProxy` instance with the `Model`.
 
         :param proxy: An object reference to be held by the `Model`.
         :type proxy: IProxy
+        :return: None
         """
         pass
 
     @abstractmethod
-    def retrieve_proxy(self, proxy_name: str) -> IProxy:
+    def retrieve_proxy(self, proxy_name: str) -> Optional[IProxy]:
         """
         Retrieve an `IProxy` instance from the Model.
 
@@ -45,7 +47,7 @@ class IModel(ABC):
         pass
 
     @abstractmethod
-    def remove_proxy(self, proxy_name: str) -> IProxy:
+    def remove_proxy(self, proxy_name: str) -> Optional[IProxy]:
         """
         Remove an `IProxy` instance from the Model.
 

@@ -5,7 +5,7 @@
 # Your reuse is governed by the BSD 3-Clause License
 
 from abc import ABC, abstractmethod
-from typing import Callable
+from typing import Callable, Optional
 
 from .ICommand import ICommand
 from .IMediator import IMediator
@@ -32,7 +32,7 @@ class IFacade(INotifier, ABC):
     """
 
     @abstractmethod
-    def register_proxy(self, proxy: IProxy):
+    def register_proxy(self, proxy: IProxy) -> None:
         """
         Register a `Proxy` with the `Model` by name.
 
@@ -43,7 +43,7 @@ class IFacade(INotifier, ABC):
         pass
 
     @abstractmethod
-    def retrieve_proxy(self, proxy_name: str) -> IProxy:
+    def retrieve_proxy(self, proxy_name: str) -> Optional[IProxy]:
         """
         Retrieve a `IProxy` from the `Model` by name.
 
@@ -54,7 +54,7 @@ class IFacade(INotifier, ABC):
         pass
 
     @abstractmethod
-    def remove_proxy(self, proxy_name: str) -> IProxy:
+    def remove_proxy(self, proxy_name: str) -> Optional[IProxy]:
         """
         Remove an `IProxy` instance from the `Model` by name.
 
@@ -78,7 +78,7 @@ class IFacade(INotifier, ABC):
         pass
 
     @abstractmethod
-    def register_command(self, notification_name: str, factory: Callable[[], ICommand]):
+    def register_command(self, notification_name: str, factory: Callable[[], ICommand]) -> None:
         """
         Register an `ICommand` with the `Controller`.
 
@@ -102,7 +102,7 @@ class IFacade(INotifier, ABC):
         pass
 
     @abstractmethod
-    def remove_command(self, notification_name: str):
+    def remove_command(self, notification_name: str) -> None:
         """
         Remove a previously registered `ICommand` to `INotification` mapping from the Controller.
 
@@ -113,7 +113,7 @@ class IFacade(INotifier, ABC):
         pass
 
     @abstractmethod
-    def register_mediator(self, mediator: IMediator):
+    def register_mediator(self, mediator: IMediator) -> None:
         """
         Register an `IMediator` instance with the `View`.
 
@@ -124,7 +124,7 @@ class IFacade(INotifier, ABC):
         pass
 
     @abstractmethod
-    def retrieve_mediator(self, mediator_name: str) -> IMediator:
+    def retrieve_mediator(self, mediator_name: str) -> Optional[IMediator]:
         """
         Retrieve an `IMediator` instance from the `View`.
 
@@ -146,7 +146,7 @@ class IFacade(INotifier, ABC):
         pass
 
     @abstractmethod
-    def remove_mediator(self, mediator_name: str) -> IMediator:
+    def remove_mediator(self, mediator_name: str) -> Optional[IMediator]:
         """
         Remove a `IMediator` instance from the `View`.
 
@@ -157,7 +157,7 @@ class IFacade(INotifier, ABC):
         pass
 
     @abstractmethod
-    def notify_observers(self, notification: INotification):
+    def notify_observers(self, notification: INotification) -> None:
         """
         Notify `Observer`
 

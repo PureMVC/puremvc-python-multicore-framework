@@ -4,10 +4,10 @@
 # Copyright(c) 2025 Saad Shams <saad.shams@puremvc.org>
 # Your reuse is governed by the BSD 3-Clause License
 
-from typing import Any
+from typing import Any, Optional
 
 from puremvc.interfaces import IFacade, INotifier
-from puremvc.patterns.facade import Facade
+from puremvc.patterns.facade.Facade import Facade
 
 
 class Notifier(INotifier):
@@ -50,11 +50,11 @@ class Notifier(INotifier):
     """Multiton error message"""
     MULTITON_MSG = "multitonKey for this Notifier not yet initialized!"
 
-    def __init__(self):
+    def __init__(self) -> None:
         """Initialise the `INotifier` instance with an empty multiton key"""
-        self.multitonKey = None
+        self.multitonKey: Optional[str] = None
 
-    def send_notification(self, notification_name: str, body: Any = None, note_type: str = None):
+    def send_notification(self, notification_name: str, body: Any = None, type: Optional[str] = None) -> None:
         """
         Create and send an `INotification`.
 
@@ -65,13 +65,13 @@ class Notifier(INotifier):
         :type notification_name: str
         :param body: The body of the notification (optional). Default is None.
         :type body: Any, optional
-        :param note_type: The type of the notification (optional). Default is None.
-        :type note_type: str, optional
+        :param type: The type of the notification (optional). Default is None.
+        :type type: str, optional
         :return: None
         """
-        self.facade.send_notification(notification_name, body, note_type)
+        if self.facade: self.facade.send_notification(notification_name, body, type)
 
-    def initialize_notifier(self, key: str):
+    def initialize_notifier(self, key: str) -> None:
         """
         Initialize this INotifier instance.
 
@@ -91,12 +91,12 @@ class Notifier(INotifier):
         self.multitonKey = key
 
     @property
-    def facade(self) -> IFacade:
+    def facade(self) -> Optional[IFacade]:
         """
         Return the Multiton Facade instance
 
         :return: The instance of IFacade.
-        :rtype: IFacade
+        :rtype: Optional[IFacade]
         """
         if self.multitonKey is None:
             raise Exception(self.MULTITON_MSG)
