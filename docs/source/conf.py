@@ -15,7 +15,7 @@ project = 'PureMVC'
 copyright = '2025, Saad Shams'
 author = 'Saad Shams'
 
-version = '2.0.0'
+version = '2.0.2'
 release = 'BSD 3-Clause License'
 
 # -- General configuration ---------------------------------------------------

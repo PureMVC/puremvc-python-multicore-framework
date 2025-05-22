@@ -95,7 +95,8 @@ class Model(IModel):
         :return: None
         """
         proxy.initialize_notifier(self.multitonKey)
-        self.proxyMap[proxy.proxy_name] = proxy
+        with self.proxyMapLock:
+            self.proxyMap[proxy.proxy_name] = proxy
         proxy.on_register()
 
     def retrieve_proxy(self, proxy_name: str) -> IProxy:
@@ -107,7 +108,8 @@ class Model(IModel):
         :return: the `IProxy` instance previously registered with the given `proxyName`.
         :rtype: IProxy
         """
-        return self.proxyMap.get(proxy_name)
+        with self.proxyMapLock:
+            return self.proxyMap.get(proxy_name)
 
     def has_proxy(self, proxy_name: str) -> bool:
         """
@@ -118,7 +120,8 @@ class Model(IModel):
         :return: Returns True if the proxy exists in the proxy map, False otherwise.
         :rtype: bool
         """
-        return self.proxyMap.get(proxy_name) is not None
+        with self.proxyMapLock:
+            return self.proxyMap.get(proxy_name) is not None
 
     def remove_proxy(self, proxy_name: str) -> IProxy:
         """
@@ -129,9 +132,11 @@ class Model(IModel):
         :return: the `IProxy` that was removed from the `Model`
         :rtype: IProxy
         """
-        proxy = self.proxyMap.get(proxy_name)
+        with self.proxyMapLock:
+            proxy = self.proxyMap.get(proxy_name)
+            if proxy:
+                del self.proxyMap[proxy_name]
         if proxy:
-            del self.proxyMap[proxy_name]
             proxy.on_remove()
         return proxy
 

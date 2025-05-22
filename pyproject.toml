@@ -21,4 +21,4 @@ classifiers = [
 [project.urls]
 Homepage = "https://puremvc.org"
 Source = "https://github.com/PureMVC/puremvc-python-multicore-framework"
-Documentation = "https://puremvc.org/pages/docs/python/multicore"
+Documentation = "https://puremvc.org/pages/docs/Python/multicore"

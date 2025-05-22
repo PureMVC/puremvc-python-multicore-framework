@@ -12,6 +12,8 @@ PureMVC is a lightweight framework for creating applications based upon the clas
 pip install PureMVC
 ```
 <!---
+Documentation: Update version docs/source/conf.py
+Update: python3 -m pip install --upgrade pip
 Development: pip install -e .
 Testing: pytest test/
 Build: python -m build
@@ -36,7 +38,7 @@ index.rst
 -->
 
 ## Status
-Production - [Version 2.0.1](https://github.com/PureMVC/puremvc-python-multicore-framework/blob/master/VERSION)
+Production - [Version 2.0.2](https://github.com/PureMVC/puremvc-python-multicore-framework/blob/master/VERSION)
 
 ## Platforms / Technologies
 * [Python](http://en.wikipedia.org/wiki/Python_(programming_language))
