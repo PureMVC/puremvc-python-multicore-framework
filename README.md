@@ -11,36 +11,64 @@ PureMVC is a lightweight framework for creating applications based upon the clas
 ```commandline
 pip install PureMVC
 ```
-<!---
-Documentation: Update version docs/source/conf.py
-Update: python3 -m pip install --upgrade pip
-Development: pip install -e .
-Type Testing: 
-  pip install mypy
-  mypy ./src
-Testing: pytest test/
-Build: python -m build
-Publish: twine upload dist/*
+---
 
-Documentation: 
-Install: pip install sphinx sphinx_rtd_theme
-Generate: 
-mkdir docs && cd docs && sphinx-quickstart --sep -p PureMVC -a "Saad Shams" -v "2.0.0" -r "BSD 3-Clause License" -l "en"
-cd ../ && sphinx-apidoc -o docs/source src/puremvc && cd docs && make html && cd .. && open docs/build/html/index.html
+## Development
 
-Update
-sphinx-apidoc -o docs/source src/puremvc --force && cd docs && make html && cd .. && open docs/build/html/index.html
+### Install Dependency (Editable Package)
+```shell
+pip install -e .
+```
 
-conf.py
-import os
-import sys
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'src')))
-extensions = ['sphinx.ext.autodoc']
-html_theme = 'sphinx_rtd_theme'
+### Type Checking
+```shell
+pip install mypy
+mypy ./src
+```
 
-index.rst
-13: modules
--->
+### Testing
+```shell
+pytest test/
+```
+
+### Build & Publish
+```shell
+python -m build
+twine upload dist/*
+```
+
+### Generate Documentation with Sphinx
+- Install Sphinx and theme:
+  ```shell
+  pip install sphinx sphinx_rtd_theme
+  ```
+- Initialize Docs
+  ```shell
+  mkdir docs && cd docs 
+  sphinx-quickstart --sep -p PureMVC -a "Saad Shams" -v "2.0" -r "2.0.0" -l "en"
+  ```
+- Generate API docs and build HTML:
+  ```shell
+  cd ../ && sphinx-apidoc -o docs/source src/puremvc && cd docs && make html && cd .. && open docs/build/html/index.html
+  ```
+
+- To update docs after code changes:
+  ```shell
+  sphinx-apidoc -o docs/source src/puremvc --force && cd docs && make html && cd .. && open docs/build/html/index.html
+  ```
+- Snippet: conf.py
+  ```python
+  import os
+  import sys
+  sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'src')))
+  extensions = ['sphinx.ext.autodoc']
+  html_theme = 'sphinx_rtd_theme'
+  ```
+- Snippet: index.rst
+  ```
+  13: modules
+  ```
+---
 
 ## Status
 Production - [Version 2.0.2](https://github.com/PureMVC/puremvc-python-multicore-framework/blob/master/VERSION)

@@ -120,16 +120,16 @@ class View(IView):
         :type notification: INotification
         :return: None
         """
-        # Get a reference to the observers list for this notification name
+        # Get a reference to the observer list for this notification name
         with self.observerMapLock:
             observers = self.observerMap.get(notification.name)
 
-        if observers:
-            # Copy observers (observers[:]) from reference array to working array,
-            # since the reference array may change during the notification loo
-            for observer in observers[:]:
-                # Notify Observers from the working array
-                observer.notify_observer(notification)
+        # Copy observers (observers[:]) from reference array to a working array,
+        # since the reference array may change during the notification loo
+        # Safe iteration, create a shallow copy of observers or use an empty list if observers is None or falsy.
+        for observer in list(observers or []):
+            # Notify Observers from the working array
+            observer.notify_observer(notification)
 
     def remove_observer(self, notification_name: str, notify_context: Any) -> None:
         """
@@ -172,18 +172,19 @@ class View(IView):
         :return: None
         """
         # Do not allow re-registration (you must to removeMediator first)
-        with self.mediatorMapLock:
-            if self.mediatorMap.get(mediator.mediator_name):
-                return
+        if self.has_mediator(mediator.mediator_name):
+            return
 
-            mediator.initialize_notifier(self.multitonKey)
+        mediator.initialize_notifier(self.multitonKey)
+
+        with self.mediatorMapLock:
             self.mediatorMap[mediator.mediator_name] = mediator
 
+        observer = Observer(mediator.handle_notification, mediator)
+
         interests = mediator.list_notification_interests()
-        if interests:
-            observer = Observer(mediator.handle_notification, mediator)
-            for interest in interests:
-                self.register_observer(interest, observer)
+        for interest in interests:
+            self.register_observer(interest, observer)
 
         mediator.on_register()
 
@@ -222,11 +223,12 @@ class View(IView):
         """
         with self.mediatorMapLock:
             mediator = self.mediatorMap.get(mediator_name)
-            if not mediator: return None
-            for interest in mediator.list_notification_interests():
-                self.remove_observer(interest, mediator)
 
-            del self.mediatorMap[mediator_name]
+        if not mediator: return None
+        for interest in mediator.list_notification_interests():
+            self.remove_observer(interest, mediator)
+
+        del self.mediatorMap[mediator_name]
 
         mediator.on_remove()
         return mediator
