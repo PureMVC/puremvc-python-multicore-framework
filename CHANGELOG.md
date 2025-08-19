@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [2.0.1] - 2025-08-19
+## [2.0.2] - 2025-08-19
 - Minor fixes
 
 ## [2.0.1] - 2025-05-15
