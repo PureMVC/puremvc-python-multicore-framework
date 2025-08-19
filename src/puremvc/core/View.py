@@ -122,12 +122,12 @@ class View(IView):
         """
         # Get a reference to the observer list for this notification name
         with self.observerMapLock:
-            observers = self.observerMap.get(notification.name)
+            # Copy observers (observers[:]) from reference array to a working array,
+            observers = list(self.observerMap.get(notification.name) or [])
 
-        # Copy observers (observers[:]) from reference array to a working array,
         # since the reference array may change during the notification loo
         # Safe iteration, create a shallow copy of observers or use an empty list if observers is None or falsy.
-        for observer in list(observers or []):
+        for observer in observers:
             # Notify Observers from the working array
             observer.notify_observer(notification)
 
