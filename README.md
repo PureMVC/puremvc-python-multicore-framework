@@ -33,6 +33,7 @@ pytest test/
 
 ### Build & Publish
 ```shell
+python -m pip install --upgrade pip build twine
 python -m build
 twine upload dist/*
 ```
